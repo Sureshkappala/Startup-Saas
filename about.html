@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover Stackly's mission, leadership team, company values, and journey building the future of autonomous startup operations.">
+  <title>About Us — Our Story & Mission — Stackly SaaS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img">
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="product.html" class="nav-link">Product</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-trigger-btn" aria-label="Open Search">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search...</span>
+          <kbd>⌘K</kbd>
+        </button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Log in</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="mobile-toggle-btn" aria-label="Toggle Menu">
+          <svg class="icon icon-lg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close Menu">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-search-wrap">
+      <div class="mobile-drawer-search-box search-trigger-btn">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Search features, docs...</span>
+      </div>
+    </div>
+
+    <nav class="mobile-drawer-nav">
+      <a href="index.html" class="mobile-nav-link"><span>Home</span> <span class="nav-dash"></span></a>
+      <a href="about.html" class="mobile-nav-link active"><span>About Us</span> <span class="nav-dash"></span></a>
+      <a href="product.html" class="mobile-nav-link"><span>Product</span> <span class="nav-dash"></span></a>
+      <a href="features.html" class="mobile-nav-link"><span>Features</span> <span class="nav-dash"></span></a>
+      <a href="solutions.html" class="mobile-nav-link"><span>Solutions</span> <span class="nav-dash"></span></a>
+      <a href="pricing.html" class="mobile-nav-link"><span>Pricing</span> <span class="nav-dash"></span></a>
+      <a href="contact.html" class="mobile-nav-link"><span>Customer Contact</span> <span class="nav-dash"></span></a>
+    </nav>
+
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">LOGIN</a>
+      <a href="register.html" class="btn btn-secondary" style="width: 100%;">MY ACCOUNT</a>
+      <div class="mobile-drawer-concierge">
+        <div class="mobile-drawer-concierge-title">DIRECT WORKSPACE CONCIERGE</div>
+        <div class="concierge-info-grid">
+          <div class="concierge-row"><span class="concierge-label">Call:</span> <a href="tel:+18005557825" class="concierge-val">+1 (800) 555-STCK</a></div>
+          <div class="concierge-row"><span class="concierge-label">Email:</span> <a href="mailto:concierge@stackly.com" class="concierge-val">concierge@stackly.com</a></div>
+          <div class="concierge-row"><span class="concierge-label">Hubs:</span> <span class="concierge-val">California • Oregon • Midwest • Texas</span></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="search-modal-overlay">
+    <div class="search-modal-container">
+      <div class="search-input-wrapper">
+        <svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input-field" placeholder="Search features, solutions, docs..." autofocus>
+        <button class="search-modal-close btn-ghost btn-sm">ESC</button>
+      </div>
+      <div class="search-results-box"></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Header -->
+    <section class="section section-dark" style="padding: 5.5rem 0 4rem; text-align: center;">
+      <div class="container">
+        <span class="section-badge section-badge-dark">Our Story & Mission</span>
+        <h1 style="max-width: 840px; margin: 0.5rem auto 1rem;">Empowering Teams to Build Without Operational Drag</h1>
+        <p style="max-width: 680px; margin: 0 auto; color: var(--slate-300); font-size: 1.15rem; line-height: 1.7;">
+          We founded Stackly with a single thesis: ambitious technology companies spend too much time orchestrating tools rather than innovating products.
+        </p>
+      </div>
+    </section>
+
+    <!-- Story & Mission -->
+    <section class="section">
+      <div class="container">
+        <!-- Origin Split Grid: Story Left & Image Right -->
+        <div class="product-showcase-grid" style="align-items: center; margin-bottom: 3.5rem;">
+          <div>
+            <span class="section-badge">The Origin</span>
+            <h2 style="font-size: clamp(1.85rem, 3vw, 2.5rem); margin-bottom: 1rem;">Born from Engineering Frustration</h2>
+            <p style="color: var(--slate-600); margin: 0 0 1rem 0; line-height: 1.7; font-size: 1.05rem;">
+              In 2023, our founders were leading engineering and product at fast-scaling SaaS companies. Every day was lost to status update pings, manually updating tickets, and reconciling disconnected metrics across four different dashboards.
+            </p>
+            <p style="color: var(--slate-600); line-height: 1.7; margin-bottom: 1.25rem; font-size: 1.05rem;">
+              We envisioned a synchronized platform where business intelligence, project backlogs, and automations live in a unified database. Today, Stackly serves over 25,000+ teams across 80+ countries.
+            </p>
+
+            <!-- Founder Quote Callout -->
+            <div style="background: var(--lavender-50); border: 1px solid var(--lavender-200); border-left: 4px solid var(--blue-600); padding: 1.15rem 1.35rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-top: 1.25rem;">
+              <p style="font-style: italic; color: var(--slate-700); font-size: 0.925rem; margin-bottom: 0.5rem; line-height: 1.6;">
+                "We built Stackly to eliminate operational drag so software builders can focus on shipping products that matter."
+              </p>
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <img src="assets/images/avatar-alex.webp" alt="Alexandre Keller" style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--slate-300);">
+                <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-900);">Alexandre Keller, Co-Founder &amp; CEO</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Hero Image Frame with Glass Info Badge -->
+          <div style="position: relative; border-radius: var(--radius-2xl); overflow: hidden; border: 1px solid var(--slate-300); box-shadow: var(--shadow-lg); height: 380px; background: #0B0F19;">
+            <img src="assets/images/team-engineering-sprint.webp" alt="Stackly Founders &amp; Engineering Sprint Sessions" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; background: rgba(11, 15, 25, 0.88); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--radius-lg); padding: 0.85rem 1.15rem; color: #fff; display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <div style="font-size: 0.75rem; color: var(--slate-400);">🚀 Engineering Sprints</div>
+                <div style="font-weight: 700; font-size: 0.9rem; color: #fff;">HQ Architecture Sprint Session</div>
+              </div>
+              <span style="background: rgba(37, 99, 235, 0.3); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.4); padding: 0.25rem 0.65rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600;">San Francisco, CA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full-Width Stats Metrics Strip -->
+        <div style="background: var(--lavender-50); border: 1px solid var(--lavender-200); border-radius: var(--radius-2xl); padding: 2.25rem; margin-bottom: 5.5rem;">
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;" class="about-stats-grid">
+            <div style="background: var(--white); padding: 1.5rem 1.25rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--slate-200); text-align: center;">
+              <div style="font-size: 2.25rem; font-weight: 800; color: var(--blue-600); line-height: 1.2;" data-counter="25" data-suffix="k+">25k+</div>
+              <div style="font-size: 0.85rem; color: var(--slate-600); font-weight: 600; margin-top: 0.35rem;">Active Workspaces</div>
+            </div>
+            <div style="background: var(--white); padding: 1.5rem 1.25rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--slate-200); text-align: center;">
+              <div style="font-size: 2.25rem; font-weight: 800; color: var(--purple-600); line-height: 1.2;" data-counter="140" data-suffix="M+">140M+</div>
+              <div style="font-size: 0.85rem; color: var(--slate-600); font-weight: 600; margin-top: 0.35rem;">Automations Executed</div>
+            </div>
+            <div style="background: var(--white); padding: 1.5rem 1.25rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--slate-200); text-align: center;">
+              <div style="font-size: 2.25rem; font-weight: 800; color: #10B981; line-height: 1.2;" data-counter="99.99" data-suffix="%">99.99%</div>
+              <div style="font-size: 0.85rem; color: var(--slate-600); font-weight: 600; margin-top: 0.35rem;">Platform Uptime</div>
+            </div>
+            <div style="background: var(--white); padding: 1.5rem 1.25rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--slate-200); text-align: center;">
+              <div style="font-size: 2.25rem; font-weight: 800; color: var(--slate-900); line-height: 1.2;" data-counter="80" data-suffix="+">80+</div>
+              <div style="font-size: 0.85rem; color: var(--slate-600); font-weight: 600; margin-top: 0.35rem;">Countries Served</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Values -->
+        <div class="section-header">
+          <span class="section-badge section-badge-purple">Core Values</span>
+          <h2 class="section-title">The Principles That Guide Us</h2>
+        </div>
+
+        <div class="about-values-grid">
+          <div class="feature-card">
+            <div class="feature-icon-badge"><svg class="icon icon-lg" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+            <h3 style="font-size: 1.2rem;">Velocity With Craft</h3>
+            <p style="color: var(--slate-600); font-size: 0.9rem; margin-top: 0.5rem;">We move extraordinarily fast without compromising on software elegance, performance, or reliability.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-badge purple"><svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+            <h3 style="font-size: 1.2rem;">Respect Attention</h3>
+            <p style="color: var(--slate-600); font-size: 0.9rem; margin-top: 0.5rem;">Notification fatigue kills deep thought. We engineer smart filters to guard focus time.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-badge"><svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+            <h3 style="font-size: 1.2rem;">Zero-Trust Privacy</h3>
+            <p style="color: var(--slate-600); font-size: 0.9rem; margin-top: 0.5rem;">Customer data is sacred. We enforce strict hardware-level encryption and zero telemetry snooping.</p>
+          </div>
+        </div>
+
+        <!-- Leadership Team with Real Avatars -->
+        <div id="team" class="section-header">
+          <span class="section-badge">Leadership</span>
+          <h2 class="section-title">Built by Builders for Builders</h2>
+          <p class="section-subtitle" style="margin: 0 auto 3rem;">Meet the team dedicated to crafting the highest-performing SaaS operations engine.</p>
+        </div>
+
+        <div class="about-team-grid">
+          <div class="feature-card" style="text-align: center; align-items: center;">
+            <img src="assets/images/avatar-alex.webp" alt="Alexandre Keller" class="team-avatar-img">
+            <h4 style="font-size: 1.05rem;">Alexandre Keller</h4>
+            <span style="font-size: 0.8rem; color: var(--slate-500);">Co-Founder & CEO</span>
+          </div>
+
+          <div class="feature-card" style="text-align: center; align-items: center;">
+            <img src="assets/images/avatar-sarah.webp" alt="Sarah Lin" class="team-avatar-img">
+            <h4 style="font-size: 1.05rem;">Sarah Lin</h4>
+            <span style="font-size: 0.8rem; color: var(--slate-500);">Co-Founder & CTO</span>
+          </div>
+
+          <div class="feature-card" style="text-align: center; align-items: center;">
+            <img src="assets/images/avatar-marcus.webp" alt="Marcus Patel" class="team-avatar-img">
+            <h4 style="font-size: 1.05rem;">Marcus Patel</h4>
+            <span style="font-size: 0.8rem; color: var(--slate-500);">Head of Product Design</span>
+          </div>
+
+          <div class="feature-card" style="text-align: center; align-items: center;">
+            <img src="assets/images/avatar-elena.webp" alt="Elena Larson" class="team-avatar-img">
+            <h4 style="font-size: 1.05rem;">Elena Larson</h4>
+            <span style="font-size: 0.8rem; color: var(--slate-500);">VP of Customer Success</span>
+          </div>
+        </div>
+
+        <!-- Startup Team & Engineering Culture Gallery -->
+        <div class="section-header" style="text-align: center;">
+          <span class="section-badge section-badge-purple">Inside Stackly</span>
+          <h2 class="section-title">Our Startup Culture & Engineering Hubs</h2>
+          <p class="section-subtitle" style="margin: 0 auto 3.5rem;">Fast-paced sprints, transparent architectures, and an obsession with developer delight.</p>
+        </div>
+
+        <div class="about-culture-grid">
+          <!-- Team Photo 1 -->
+          <div class="feature-card" style="padding: 0; overflow: hidden; border-radius: var(--radius-xl); border: 1px solid var(--slate-200); background: var(--white); box-shadow: var(--shadow-md);">
+            <div style="overflow: hidden; height: 240px;">
+              <img src="assets/images/team-collaboration-office.webp" alt="Stackly High-Velocity Engineering Squad" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
+            </div>
+            <div style="padding: 1.5rem;">
+              <span class="section-badge" style="font-size: 0.75rem; margin-bottom: 0.5rem;">Engineering Hub</span>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Cross-Functional Sprint Velocity</h3>
+              <p style="color: var(--slate-600); font-size: 0.875rem; line-height: 1.6;">
+                Engineers, PMs, and designers co-locating to iterate on real-time WebSocket pipelines and distributed storage engines.
+              </p>
+            </div>
+          </div>
+
+          <!-- Team Photo 2 -->
+          <div class="feature-card" style="padding: 0; overflow: hidden; border-radius: var(--radius-xl); border: 1px solid var(--slate-200); background: var(--white); box-shadow: var(--shadow-md);">
+            <div style="overflow: hidden; height: 240px;">
+              <img src="assets/images/team-engineering-sprint.webp" alt="Stackly Architecture & Whiteboarding Sessions" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
+            </div>
+            <div style="padding: 1.5rem;">
+              <span class="section-badge section-badge-purple" style="font-size: 0.75rem; margin-bottom: 0.5rem;">Architecture Lab</span>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Collaborative Whiteboard Design</h3>
+              <p style="color: var(--slate-600); font-size: 0.875rem; line-height: 1.6;">
+                Architecture reviews with zero bureaucracy — open whiteboards, pair programming, and automated CI/CD checks.
+              </p>
+            </div>
+          </div>
+
+          <!-- Team Photo 3 -->
+          <div class="feature-card" style="padding: 0; overflow: hidden; border-radius: var(--radius-xl); border: 1px solid var(--slate-200); background: var(--white); box-shadow: var(--shadow-md);">
+            <div style="overflow: hidden; height: 240px;">
+              <img src="assets/images/team-culture-loft.webp" alt="Stackly Product Strategy & Telemetry Reviews" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);">
+            </div>
+            <div style="padding: 1.5rem;">
+              <span class="section-badge" style="font-size: 0.75rem; margin-bottom: 0.5rem; background: rgba(16, 185, 129, 0.1); color: #059669;">Async & Hybrid</span>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Data-Driven Product Culture</h3>
+              <p style="color: var(--slate-600); font-size: 0.875rem; line-height: 1.6;">
+                Every release is driven by telemetry insights, customer feedback loops, and relentless UX polish.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestones Timeline -->
+        <div class="section-header">
+          <span class="section-badge">Milestones</span>
+          <h2 class="section-title">Our Journey of Continuous Innovation</h2>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto 5rem; display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.25rem; background: var(--slate-50); border-radius: var(--radius-lg); border: 1px solid var(--slate-200);">
+            <div style="font-weight: 800; color: var(--blue-600); font-size: 1.15rem; min-width: 80px;">2026 Q3</div>
+            <div>
+              <strong style="display:block; color:var(--slate-900); margin-bottom:0.25rem;">Autonomous Workflow Engine v3.0 Launch</strong>
+              <p style="color:var(--slate-600); font-size:0.875rem; margin:0;">Introduced conditional event branching, WebSocket pipeline sync, and zero-code logic builders.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.25rem; background: var(--slate-50); border-radius: var(--radius-lg); border: 1px solid var(--slate-200);">
+            <div style="font-weight: 800; color: var(--purple-600); font-size: 1.15rem; min-width: 80px;">2025 Q4</div>
+            <div>
+              <strong style="display:block; color:var(--slate-900); margin-bottom:0.25rem;">\$18M Series A & SOC2 Type II Certification</strong>
+              <p style="color:var(--slate-600); font-size:0.875rem; margin:0;">Backed by top tier SaaS venture investors and achieved global compliance audits.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.25rem; background: var(--slate-50); border-radius: var(--radius-lg); border: 1px solid var(--slate-200);">
+            <div style="font-weight: 800; color: #10B981; font-size: 1.15rem; min-width: 80px;">2024 Q1</div>
+            <div>
+              <strong style="display:block; color:var(--slate-900); margin-bottom:0.25rem;">Public Beta & 10,000 Community Signups</strong>
+              <p style="color:var(--slate-600); font-size:0.875rem; margin:0;">Launched on Product Hunt as #1 Product of the Day with rapid organic adoption.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================================================================
+             NEW SECTION 1 — OPEN SOURCE & SUSTAINABLE CLOUD PLEDGE
+             ========================================================================== -->
+        <div class="section-header" style="text-align: center; margin-top: 5rem;">
+          <span class="section-badge section-badge-purple">Global Impact</span>
+          <h2 class="section-title">Open Standards, Community &amp; Sustainability</h2>
+          <p class="section-subtitle" style="margin: 0 auto 3rem;">We believe software infrastructure should empower developers and preserve the planet.</p>
+        </div>
+
+        <div class="about-impact-grid">
+          <div class="feature-card" style="background: var(--white); box-shadow: var(--shadow-sm); padding: 2rem;">
+            <div class="feature-icon-badge" style="background: rgba(37, 99, 235, 0.1); color: var(--blue-600); margin-bottom: 1.25rem;">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Open Protocol Standards</h3>
+            <p style="color: var(--slate-600); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+              We contribute upstream code to OpenTelemetry, WebSockets standards, and SQLite distributed replications to prevent proprietary vendor lock-in.
+            </p>
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--blue-600);">100% Data Portability</span>
+          </div>
+
+          <div class="feature-card" style="background: var(--white); box-shadow: var(--shadow-sm); padding: 2rem;">
+            <div class="feature-icon-badge" style="background: rgba(16, 185, 129, 0.1); color: #10B981; margin-bottom: 1.25rem;">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">100% Green Energy Cloud</h3>
+            <p style="color: var(--slate-600); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+              Every CPU cycle and storage cluster running Stackly compute operates on verified renewable wind and solar microgrids with net-zero carbon footprints.
+            </p>
+            <span style="font-size: 0.8rem; font-weight: 700; color: #10B981;">Certified Carbon-Neutral</span>
+          </div>
+
+          <div class="feature-card" style="background: var(--white); box-shadow: var(--shadow-sm); padding: 2rem;">
+            <div class="feature-icon-badge purple" style="margin-bottom: 1.25rem;">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">\$500K Founder Grants</h3>
+            <p style="color: var(--slate-600); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+              Annual non-dilutive credit grants and dedicated architectural mentorship allocated to university founders and bootstrap developers worldwide.
+            </p>
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--purple-600);">Grants Open for Q4</span>
+          </div>
+        </div>
+
+        <!-- ==========================================================================
+             NEW SECTION 2 — CAREERS & OPEN POSITIONS
+             ========================================================================== -->
+        <div id="careers" class="section-header" style="text-align: center;">
+          <span class="section-badge">Join the Crew</span>
+          <h2 class="section-title">Build the Future of Modern Workspaces</h2>
+          <p class="section-subtitle" style="margin: 0 auto 3.5rem;">We are a remote-first, high-autonomy team of engineers, designers, and systems architects.</p>
+        </div>
+
+        <div class="about-careers-grid">
+          <!-- Job 1 -->
+          <div class="feature-card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.75rem 2rem; border-radius: var(--radius-xl); background: var(--white); box-shadow: var(--shadow-sm);">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.75rem; font-weight: 700; background: var(--lavender-100); color: var(--blue-600); padding: 0.2rem 0.6rem; border-radius: var(--radius-full);">Engineering</span>
+                <span style="font-size: 0.8rem; color: var(--slate-500);">Remote (Americas / EMEA)</span>
+              </div>
+              <h3 style="font-size: 1.2rem; color: var(--slate-900);">Staff Distributed Systems Engineer</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-600); margin-top: 0.25rem;">Rust, WebSockets, Raft Consensus, Distributed DBs • \$190k – \$240k + Equity</p>
+            </div>
+            <a href="contact.html?subject=career" class="btn btn-secondary btn-sm" style="flex-shrink: 0; margin-left: 1rem;">Apply Role</a>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="feature-card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.75rem 2rem; border-radius: var(--radius-xl); background: var(--white); box-shadow: var(--shadow-sm);">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.75rem; font-weight: 700; background: rgba(124, 58, 237, 0.1); color: var(--purple-600); padding: 0.2rem 0.6rem; border-radius: var(--radius-full);">Product Design</span>
+                <span style="font-size: 0.8rem; color: var(--slate-500);">San Francisco / Remote</span>
+              </div>
+              <h3 style="font-size: 1.2rem; color: var(--slate-900);">Senior Product Designer (Design Systems)</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-600); margin-top: 0.25rem;">Figma, Micro-Interactions, Canvas UI, Prototyping • \$160k – \$205k + Equity</p>
+            </div>
+            <a href="contact.html?subject=career" class="btn btn-secondary btn-sm" style="flex-shrink: 0; margin-left: 1rem;">Apply Role</a>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="feature-card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.75rem 2rem; border-radius: var(--radius-xl); background: var(--white); box-shadow: var(--shadow-sm);">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.75rem; font-weight: 700; background: var(--lavender-100); color: var(--blue-600); padding: 0.2rem 0.6rem; border-radius: var(--radius-full);">Engineering</span>
+                <span style="font-size: 0.8rem; color: var(--slate-500);">London / Remote</span>
+              </div>
+              <h3 style="font-size: 1.2rem; color: var(--slate-900);">Lead Frontend Architect (Vanilla &amp; WebGL)</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-600); margin-top: 0.25rem;">Modern ES6+, Canvas 2D, Performance Profiling • £130k – £170k + Equity</p>
+            </div>
+            <a href="contact.html?subject=career" class="btn btn-secondary btn-sm" style="flex-shrink: 0; margin-left: 1rem;">Apply Role</a>
+          </div>
+
+          <!-- Job 4 -->
+          <div class="feature-card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.75rem 2rem; border-radius: var(--radius-xl); background: var(--white); box-shadow: var(--shadow-sm);">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.75rem; font-weight: 700; background: rgba(16, 185, 129, 0.1); color: #10B981; padding: 0.2rem 0.6rem; border-radius: var(--radius-full);">Growth &amp; Solutions</span>
+                <span style="font-size: 0.8rem; color: var(--slate-500);">New York / Remote</span>
+              </div>
+              <h3 style="font-size: 1.2rem; color: var(--slate-900);">Enterprise Solutions Architect</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-600); margin-top: 0.25rem;">Technical Pre-Sales, Migration Pipelines, APIs • \$150k – \$195k + Bonus</p>
+            </div>
+            <a href="contact.html?subject=career" class="btn btn-secondary btn-sm" style="flex-shrink: 0; margin-left: 1rem;">Apply Role</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section" style="padding-bottom: 6rem;">
+      <div class="container">
+        <div class="final-cta-card">
+          <div class="final-cta-grid">
+            <div class="final-cta-content" style="text-align: left;">
+              <span class="section-badge section-badge-dark" style="margin-bottom: 1.25rem;">Join the Community</span>
+              <h2 style="color: var(--white); font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 1rem; line-height: 1.2;">
+                Join 25,000+ Founders & Engineers on the Journey
+              </h2>
+              <p style="color: var(--slate-300); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.65;">
+                Ready to eliminate friction and modernize how your team collaborates? Start your free full-access trial today.
+              </p>
+              <a href="register.html" class="btn btn-primary btn-lg">Get Started Free</a>
+            </div>
+
+            <div class="final-cta-img-box">
+              <img src="assets/images/cta-startup-rocket.webp" alt="Stackly Startup Engineering Culture & Acceleration">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Summary -->
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.5rem; display: inline-block;">
+            <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img" style="filter: brightness(0) invert(1); height: 42px;">
+          </a>
+          <p class="footer-brand-desc">
+            Mobilizing intelligent SaaS workflows, bespoke cloud infrastructure, sustainable data intelligence, and modern team productivity for high-growth tech enterprises.
+          </p>
+          <div class="social-links-row">
+            <a href="404.html" class="social-btn" aria-label="LinkedIn">in</a>
+            <a href="404.html" class="social-btn" aria-label="X">𝕏</a>
+            <a href="404.html" class="social-btn" aria-label="Instagram">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="YouTube">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About Stackly</a>
+            <a href="product.html" class="footer-link">Product Catalog</a>
+            <a href="features.html" class="footer-link">Features Matrix</a>
+            <a href="solutions.html" class="footer-link">Solutions Hub</a>
+            <a href="pricing.html" class="footer-link">Pricing Plans</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <div class="footer-col-title">Support</div>
+          <div class="footer-links-list">
+            <a href="contact.html" class="footer-link">Contact Coordinates</a>
+            <a href="404.html" class="footer-link">Terms & Agreements</a>
+            <a href="404.html" class="footer-link">Security Audits</a>
+            <a href="resources.html" class="footer-link">Documentation & Guides</a>
+            <a href="404.html" class="footer-link">Order Status / API Status</a>
+            <a href="user-dashboard.html" class="footer-link">User Dashboard</a>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <div class="footer-col-title">Newsletter</div>
+          <p style="font-size: 0.925rem; line-height: 1.6; color: #94A3B8; margin-bottom: 1rem;">
+            Get quarterly updates, smart style alerts, and platform feature reports.
+          </p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly quarterly intelligence reports!');">
+            <input type="email" class="footer-newsletter-input" placeholder="Your Email" required>
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

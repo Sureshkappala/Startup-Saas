@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <rect x="10" y="16" width="6" height="12" rx="3" fill="#E01E5A"/>
+  <rect x="18" y="10" width="12" height="6" rx="3" fill="#36C5F0"/>
+  <rect x="22" y="18" width="6" height="12" rx="3" fill="#2EB67D"/>
+  <rect x="8" y="24" width="12" height="6" rx="3" fill="#ECB22E"/>
+  <text x="38" y="26" fill="#0F172A" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="17" letter-spacing="-0.5">Slack</text>
+</svg>

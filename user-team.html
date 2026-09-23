@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Team & Workspace Collaborators — View team members, active pod leads, and collaborate in real-time.">
+  <title>Team & Collaborators — Stackly Workspace</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Dashboard Layout -->
+  <div class="dashboard-layout">
+    <!-- Mobile Drawer Overlay -->
+    <div class="dashboard-drawer-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <a href="user-dashboard.html" class="brand-logo" aria-label="Stackly User Dashboard">
+          <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img" style="filter: brightness(0) invert(1); height: 38px;">
+        </a>
+        <button class="dashboard-sidebar-close" aria-label="Close Dashboard Menu">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav-list">
+        <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--slate-500); font-weight: 700; padding: 0.5rem 0.85rem;">Main Workspace</div>
+        <a href="user-dashboard.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="user-projects.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          <span>Projects</span>
+        </a>
+        <a href="user-tasks.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+          <span>Tasks</span>
+        </a>
+        <a href="user-team.html" class="sidebar-nav-link active">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <span>Team</span>
+        </a>
+        <a href="user-analytics.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Analytics</span>
+        </a>
+        <a href="user-reports.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+          <span>Reports</span>
+        </a>
+        <a href="user-files.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+          <span>Files</span>
+        </a>
+        <a href="user-notifications.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <span>Notifications</span>
+        </a>
+
+        <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--slate-500); font-weight: 700; padding: 1rem 0.85rem 0.5rem;">Account</div>
+        <a href="user-profile.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile</span>
+        </a>
+        <a href="user-settings.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <a href="user-profile.html" class="sidebar-user-card" title="View Profile">
+          <div class="sidebar-user-avatar">KS</div>
+          <div class="sidebar-user-details">
+            <span class="sidebar-user-name">Kappalasuresh92</span>
+            <span class="sidebar-user-sub">Product Lead</span>
+          </div>
+        </a>
+        <a href="login.html" class="sidebar-nav-link" style="color: #F87171;">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          <span>Log out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="dashboard-main-content">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="dashboard-menu-toggle" aria-label="Toggle Dashboard Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div>
+            <h2 style="font-size: 1.25rem;">Team Directory</h2>
+            <span style="font-size: 0.8rem; color: var(--slate-500);">24 Members • 18 Online Now</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+          <button class="btn btn-primary btn-sm" onclick="alert('Invite team member... (Simulated)')">+ Invite Member</button>
+          <a href="user-notifications.html" class="topbar-icon-btn" aria-label="Notifications" title="3 New Notifications">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span class="badge-dot"></span>
+          </a>
+          <a href="user-profile.html" class="dashboard-user-widget" title="View Profile">
+            <div class="dashboard-user-avatar">
+              <span>KS</span>
+              <span class="online-indicator"></span>
+            </div>
+            <div class="dashboard-user-info">
+              <div class="dashboard-user-greeting">Welcome back, <strong>Kappalasuresh92</strong> 👋</div>
+              <div class="dashboard-user-role">Product Lead • Acme Labs</div>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <main class="dashboard-body">
+        <!-- Team Members Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          <!-- Member 1 -->
+          <div class="stat-box" style="text-align: center; padding: 2rem 1.5rem;">
+            <div style="position: relative; width: 72px; height: 72px; margin: 0 auto 1rem;">
+              <img src="assets/images/avatar-alex.webp" alt="Alex Morgan" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+              <span style="position: absolute; bottom: 2px; right: 2px; width: 14px; height: 14px; background: #10B981; border: 2px solid #fff; border-radius: 50%;"></span>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Alex Morgan</h3>
+            <div style="font-size: 0.85rem; color: var(--blue-600); font-weight: 600; margin-bottom: 0.5rem;">Lead Product Architect</div>
+            <div style="font-size: 0.8rem; color: var(--slate-500); margin-bottom: 1.25rem;">Core Engineering • SF HQ</div>
+            <a href="mailto:alex@stackly.io" class="btn btn-secondary btn-sm" style="width: 100%;">Message</a>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="stat-box" style="text-align: center; padding: 2rem 1.5rem;">
+            <div style="position: relative; width: 72px; height: 72px; margin: 0 auto 1rem;">
+              <img src="assets/images/avatar-sarah.webp" alt="Sarah Lin" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+              <span style="position: absolute; bottom: 2px; right: 2px; width: 14px; height: 14px; background: #10B981; border: 2px solid #fff; border-radius: 50%;"></span>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Sarah Lin</h3>
+            <div style="font-size: 0.85rem; color: var(--purple-600); font-weight: 600; margin-bottom: 0.5rem;">Principal Backend Engineer</div>
+            <div style="font-size: 0.8rem; color: var(--slate-500); margin-bottom: 1.25rem;">Cloud Infrastructure • Remote</div>
+            <a href="mailto:sarah@stackly.io" class="btn btn-secondary btn-sm" style="width: 100%;">Message</a>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="stat-box" style="text-align: center; padding: 2rem 1.5rem;">
+            <div style="position: relative; width: 72px; height: 72px; margin: 0 auto 1rem;">
+              <img src="assets/images/avatar-marcus.webp" alt="Marcus Patel" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+              <span style="position: absolute; bottom: 2px; right: 2px; width: 14px; height: 14px; background: #10B981; border: 2px solid #fff; border-radius: 50%;"></span>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Marcus Patel</h3>
+            <div style="font-size: 0.85rem; color: var(--blue-600); font-weight: 600; margin-bottom: 0.5rem;">Design Systems Lead</div>
+            <div style="font-size: 0.8rem; color: var(--slate-500); margin-bottom: 1.25rem;">Product Experience • London</div>
+            <a href="mailto:marcus@stackly.io" class="btn btn-secondary btn-sm" style="width: 100%;">Message</a>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="stat-box" style="text-align: center; padding: 2rem 1.5rem;">
+            <div style="position: relative; width: 72px; height: 72px; margin: 0 auto 1rem;">
+              <img src="assets/images/avatar-elena.webp" alt="Elena Rostova" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+              <span style="position: absolute; bottom: 2px; right: 2px; width: 14px; height: 14px; background: #F59E0B; border: 2px solid #fff; border-radius: 50%;"></span>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Elena Rostova</h3>
+            <div style="font-size: 0.85rem; color: var(--emerald-500); font-weight: 600; margin-bottom: 0.5rem;">Security &amp; Compliance Lead</div>
+            <div style="font-size: 0.8rem; color: var(--slate-500); margin-bottom: 1.25rem;">SecOps • Berlin</div>
+            <a href="mailto:elena@stackly.io" class="btn btn-secondary btn-sm" style="width: 100%;">Message</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

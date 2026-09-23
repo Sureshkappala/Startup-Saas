@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Custom-tailored SaaS solutions for startups, agencies, remote teams, growing companies, and enterprise organizations.">
+  <title>Solutions by Industry & Team Size — Stackly SaaS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img">
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="product.html" class="nav-link">Product</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link active">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-trigger-btn" aria-label="Open Search">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search...</span>
+          <kbd>⌘K</kbd>
+        </button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Log in</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="mobile-toggle-btn" aria-label="Toggle Menu">
+          <svg class="icon icon-lg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close Menu">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-search-wrap">
+      <div class="mobile-drawer-search-box search-trigger-btn">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Search features, docs...</span>
+      </div>
+    </div>
+
+    <nav class="mobile-drawer-nav">
+      <a href="index.html" class="mobile-nav-link"><span>Home</span> <span class="nav-dash"></span></a>
+      <a href="about.html" class="mobile-nav-link"><span>About Us</span> <span class="nav-dash"></span></a>
+      <a href="product.html" class="mobile-nav-link"><span>Product</span> <span class="nav-dash"></span></a>
+      <a href="features.html" class="mobile-nav-link"><span>Features</span> <span class="nav-dash"></span></a>
+      <a href="solutions.html" class="mobile-nav-link active"><span>Solutions</span> <span class="nav-dash"></span></a>
+      <a href="pricing.html" class="mobile-nav-link"><span>Pricing</span> <span class="nav-dash"></span></a>
+      <a href="contact.html" class="mobile-nav-link"><span>Customer Contact</span> <span class="nav-dash"></span></a>
+    </nav>
+
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">LOGIN</a>
+      <a href="register.html" class="btn btn-secondary" style="width: 100%;">MY ACCOUNT</a>
+      <div class="mobile-drawer-concierge">
+        <div class="mobile-drawer-concierge-title">DIRECT WORKSPACE CONCIERGE</div>
+        <div class="concierge-info-grid">
+          <div class="concierge-row"><span class="concierge-label">Call:</span> <a href="tel:+18005557825" class="concierge-val">+1 (800) 555-STCK</a></div>
+          <div class="concierge-row"><span class="concierge-label">Email:</span> <a href="mailto:concierge@stackly.com" class="concierge-val">concierge@stackly.com</a></div>
+          <div class="concierge-row"><span class="concierge-label">Hubs:</span> <span class="concierge-val">California • Oregon • Midwest • Texas</span></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="search-modal-overlay">
+    <div class="search-modal-container">
+      <div class="search-input-wrapper">
+        <svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input-field" placeholder="Search features, solutions, docs..." autofocus>
+        <button class="search-modal-close btn-ghost btn-sm">ESC</button>
+      </div>
+      <div class="search-results-box"></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Header -->
+    <section class="section section-dark" style="padding: 5rem 0 3.5rem; text-align: center;">
+      <div class="container">
+        <span class="section-badge section-badge-dark">Tailored Workspaces</span>
+        <h1 style="max-width: 800px; margin: 0.5rem auto 1rem;">Solutions Built for How You Work</h1>
+        <p style="max-width: 650px; margin: 0 auto; color: var(--slate-300); font-size: 1.15rem;">
+          Whether you're a pre-seed startup or a global enterprise, discover customized workflows tailored to your team's operational rhythm.
+        </p>
+      </div>
+    </section>
+
+    <!-- 6 Solutions Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="solutions-main-grid">
+          <!-- 1. Startups -->
+          <div id="startups" class="feature-card feature-card-lavender">
+            <div class="solution-img-box">
+              <img src="assets/images/team-engineering-sprint.webp" alt="Solutions for High-Growth Engineering Startups">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+              <span class="section-badge">Fast MVP</span>
+              <div style="width:40px; height:40px; border-radius:50%; background:var(--blue-100); display:flex; align-items:center; justify-content:center; color:var(--blue-600);"><svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+            </div>
+            <h3>For High-Growth Startups</h3>
+            <p style="color:var(--slate-600); margin:0.75rem 0 1.25rem;">
+              Ship your product roadmap 3x faster with pre-configured sprints, automated deployment webhooks, and runway health tracking.
+            </p>
+            <div style="margin-bottom:1.5rem; font-size:0.875rem; color:var(--slate-700);">
+              <div style="margin-bottom:0.4rem;">✓ Rapid workspace onboarding in 60 seconds</div>
+              <div style="margin-bottom:0.4rem;">✓ Zero-cost startup credit program available</div>
+              <div>✓ Integrated pitch deck & KPI sharing links</div>
+            </div>
+            <a href="register.html" class="btn btn-primary btn-sm" style="align-self:flex-start;">Explore Startup Kit</a>
+          </div>
+
+          <!-- 2. Small Businesses -->
+          <div class="feature-card">
+            <div class="solution-img-box">
+              <img src="assets/images/hero-laptop-mockup.webp" alt="Solutions for Small Business Workflows & Modern Desktops">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+              <span class="section-badge section-badge-purple">Operations</span>
+              <div style="width:40px; height:40px; border-radius:50%; background:var(--purple-100); display:flex; align-items:center; justify-content:center; color:var(--purple-600);"><svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
+            </div>
+            <h3>For Small Businesses</h3>
+            <p style="color:var(--slate-600); margin:0.75rem 0 1.25rem;">
+              Streamline daily customer operations, invoice tracking, team schedules, and task fulfillment without complex IT overhead.
+            </p>
+            <div style="margin-bottom:1.5rem; font-size:0.875rem; color:var(--slate-700);">
+              <div style="margin-bottom:0.4rem;">✓ Simple visual customer order pipelines</div>
+              <div style="margin-bottom:0.4rem;">✓ Automated client follow-ups via email</div>
+              <div>✓ Centralized contractor and staff schedules</div>
+            </div>
+            <a href="pricing.html" class="btn btn-secondary btn-sm" style="align-self:flex-start;">Explore Small Business</a>
+          </div>
+
+          <!-- 3. Agencies -->
+          <div class="feature-card">
+            <div class="solution-img-box">
+              <img src="assets/images/dashboard-light-nexus.webp" alt="Solutions for Digital Agencies & Client Portals">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+              <span class="section-badge">Client Portals</span>
+              <div style="width:40px; height:40px; border-radius:50%; background:var(--emerald-100); display:flex; align-items:center; justify-content:center; color:var(--emerald-500);"><svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+            </div>
+            <h3>For Digital Agencies & Studios</h3>
+            <p style="color:var(--slate-600); margin:0.75rem 0 1.25rem;">
+              Manage multi-client deliverables with white-labeled guest review boards, time tracking, and instant proofing sign-offs.
+            </p>
+            <div style="margin-bottom:1.5rem; font-size:0.875rem; color:var(--slate-700);">
+              <div style="margin-bottom:0.4rem;">✓ Granular client guest access controls</div>
+              <div style="margin-bottom:0.4rem;">✓ Billable hours & budget burn charts</div>
+              <div>✓ Asset versioning and design annotations</div>
+            </div>
+            <a href="contact.html" class="btn btn-secondary btn-sm" style="align-self:flex-start;">Explore Agency Portal</a>
+          </div>
+
+          <!-- 4. Remote Teams -->
+          <div id="remote" class="feature-card feature-card-lavender">
+            <div class="solution-img-box">
+              <img src="assets/images/team-collaboration-office.webp" alt="Solutions for Collaborative Engineering Teams">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+              <span class="section-badge section-badge-purple">Async Culture</span>
+              <div style="width:40px; height:40px; border-radius:50%; background:var(--blue-100); display:flex; align-items:center; justify-content:center; color:var(--blue-600);"><svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
+            </div>
+            <h3>For Distributed & Remote Teams</h3>
+            <p style="color:var(--slate-600); margin:0.75rem 0 1.25rem;">
+              Eliminate timezone friction with asynchronous daily standups, threaded decisions, and automated status summaries.
+            </p>
+            <div style="margin-bottom:1.5rem; font-size:0.875rem; color:var(--slate-700);">
+              <div style="margin-bottom:0.4rem;">✓ Async video updates and embedded memos</div>
+              <div style="margin-bottom:0.4rem;">✓ Timezone-aware notifications and scheduling</div>
+              <div>✓ Live collaborative document co-editing</div>
+            </div>
+            <a href="register.html" class="btn btn-primary btn-sm" style="align-self:flex-start;">Explore Remote Suite</a>
+          </div>
+
+          <!-- 5. Growing Companies -->
+          <div class="feature-card">
+            <div class="solution-img-box">
+              <img src="assets/images/team-culture-loft.webp" alt="Solutions for Scaling Fast-Paced Teams">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+              <span class="section-badge">Scale-Up</span>
+              <div style="width:40px; height:40px; border-radius:50%; background:var(--purple-100); display:flex; align-items:center; justify-content:center; color:var(--purple-600);"><svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div>
+            </div>
+            <h3>For Scaling Mid-Market Companies</h3>
+            <p style="color:var(--slate-600); margin:0.75rem 0 1.25rem;">
+              Transition smoothly from 20 to 500+ employees with department hierarchies, OKR tracking, and cross-team dependencies.
+            </p>
+            <div style="margin-bottom:1.5rem; font-size:0.875rem; color:var(--slate-700);">
+              <div style="margin-bottom:0.4rem;">✓ Multi-tiered team workspaces with RBAC</div>
+              <div style="margin-bottom:0.4rem;">✓ Cross-sprint milestone dependencies</div>
+              <div>✓ Executive visibility & department health scores</div>
+            </div>
+            <a href="pricing.html" class="btn btn-secondary btn-sm" style="align-self:flex-start;">Explore Scale Plans</a>
+          </div>
+
+          <!-- 6. Enterprise Teams -->
+          <div id="enterprise" class="feature-card feature-card-dark">
+            <div class="solution-img-box">
+              <img src="assets/images/cloud-saas-network.webp" alt="Solutions for Enterprise Scale & Global Mesh">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+              <span class="section-badge section-badge-dark">Enterprise</span>
+              <div style="width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:var(--white);"><svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+            </div>
+            <h3>For Global Enterprise Teams</h3>
+            <p style="color:var(--slate-300); margin:0.75rem 0 1.25rem;">
+              Unify multi-entity corporations with custom tenant hosting, SLA uptime guarantees, 24/7 technical architect support, and SIEM security logging.
+            </p>
+            <div style="margin-bottom:1.5rem; font-size:0.875rem; color:var(--slate-300);">
+              <div style="margin-bottom:0.4rem;">✓ Dedicated VPC or on-prem deployment options</div>
+              <div style="margin-bottom:0.4rem;">✓ 99.99% financially-backed SLA guarantee</div>
+              <div>✓ Custom billing & procurement terms</div>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm" style="align-self:flex-start;">Contact Enterprise Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Section 1: Industry-Specific Transformation Blueprints -->
+    <section class="section" style="padding: 6rem 0; background: var(--slate-50); border-top: 1px solid var(--slate-200); border-bottom: 1px solid var(--slate-200);">
+      <div class="container">
+        <div class="section-title">
+          <span class="section-badge">Industry Blueprints</span>
+          <h2>Tailored Architecture for High-Compliance Sectors</h2>
+          <p>Pre-configured security policies, regulatory isolation guards, and custom event pipelines designed for specialized industries.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.75rem; margin-top: 3.5rem;">
+          <!-- FinTech -->
+          <div class="feature-card" style="background: var(--white); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-lg); background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; color: #10B981; margin-bottom: 1.25rem;">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--slate-900);">FinTech &amp; Neo-Banking</h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">
+              PCI-DSS Level 1 tokenization safeguards, automated ledger reconciliation, and strict immutable transaction audit logs.
+            </p>
+            <div style="font-size: 0.75rem; font-weight: 700; color: #10B981; background: rgba(16, 185, 129, 0.1); padding: 0.25rem 0.6rem; border-radius: var(--radius-full); display: inline-block;">
+              PCI-DSS &amp; SOX Ready
+            </div>
+          </div>
+
+          <!-- HealthTech -->
+          <div class="feature-card" style="background: var(--white); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-lg); background: var(--lavender-100); display: flex; align-items: center; justify-content: center; color: var(--blue-600); margin-bottom: 1.25rem;">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            </div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--slate-900);">HealthTech &amp; Life Sciences</h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">
+              Dedicated HIPAA BAA enclave isolation, encrypted patient data pipelines, and electronic signature compliance trails.
+            </p>
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--blue-600); background: var(--lavender-100); padding: 0.25rem 0.6rem; border-radius: var(--radius-full); display: inline-block;">
+              HIPAA BAA Guaranteed
+            </div>
+          </div>
+
+          <!-- AI & ML -->
+          <div class="feature-card" style="background: var(--white); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-lg); background: rgba(124, 58, 237, 0.1); display: flex; align-items: center; justify-content: center; color: var(--purple-600); margin-bottom: 1.25rem;">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            </div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--slate-900);">AI / ML Engineering</h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">
+              Cluster GPU utilization telemetry, model checkpoint pipeline alerts, and automated inference performance regression benchmarks.
+            </p>
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--purple-600); background: rgba(124, 58, 237, 0.1); padding: 0.25rem 0.6rem; border-radius: var(--radius-full); display: inline-block;">
+              CUDA &amp; Cloud GPU Sync
+            </div>
+          </div>
+
+          <!-- E-Commerce -->
+          <div class="feature-card" style="background: var(--white); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-lg); background: rgba(245, 158, 11, 0.1); display: flex; align-items: center; justify-content: center; color: #F59E0B; margin-bottom: 1.25rem;">
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--slate-900);">Global High-Scale Retail</h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">
+              Distributed inventory sync, flash sale traffic surge load-balancing, and sub-second payment funnel drop-off alerts.
+            </p>
+            <div style="font-size: 0.75rem; font-weight: 700; color: #F59E0B; background: rgba(245, 158, 11, 0.1); padding: 0.25rem 0.6rem; border-radius: var(--radius-full); display: inline-block;">
+              100k Req/Sec Capacity
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Section 2: Customer Impact & Quantified Case Studies -->
+    <section class="section" style="padding: 6rem 0;">
+      <div class="container">
+        <div class="section-title">
+          <span class="section-badge">Customer Success</span>
+          <h2>Measurable Outcomes: How Modern Teams Scale with Stackly</h2>
+          <p>Explore how engineering, operations, and product organizations achieve transformative efficiency leaps.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3.5rem;">
+          <!-- Case 1 -->
+          <div class="feature-card" style="padding: 2.25rem; border-radius: var(--radius-2xl); background: var(--white); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 2.5rem; font-weight: 800; color: var(--blue-600); line-height: 1; margin-bottom: 0.5rem;">-71%</div>
+              <div style="font-size: 1rem; font-weight: 700; color: var(--slate-900); margin-bottom: 1rem;">Sprint Cycle Latency</div>
+              <p style="color: var(--slate-600); font-size: 0.9rem; line-height: 1.65; font-style: italic; margin-bottom: 1.5rem;">
+                “Stackly replaced 4 clunky disconnected tools and united our distributed 180-engineer team across 6 time zones with real-time sprint clarity.”
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <div style="font-weight: 700; font-size: 0.85rem; color: var(--slate-900);">Elena Rostova</div>
+                <div style="font-size: 0.75rem; color: var(--slate-500);">VP of Engineering, HyperCloud</div>
+              </div>
+              <span class="status-badge status-active" style="font-size: 0.7rem;">Verified ROI</span>
+            </div>
+          </div>
+
+          <!-- Case 2 -->
+          <div class="feature-card" style="padding: 2.25rem; border-radius: var(--radius-2xl); background: var(--white); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 2.5rem; font-weight: 800; color: #10B981; line-height: 1; margin-bottom: 0.5rem;">$84k<span style="font-size: 1.25rem;">/yr</span></div>
+              <div style="font-size: 1rem; font-weight: 700; color: var(--slate-900); margin-bottom: 1rem;">Direct Tooling Cost Saved</div>
+              <p style="color: var(--slate-600); font-size: 0.9rem; line-height: 1.65; font-style: italic; margin-bottom: 1.5rem;">
+                “Zero-code automated webhooks reduced manual reconciliation hours from 14h/week to zero. Our financial reporting is now 100% instantaneous.”
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <div style="font-weight: 700; font-size: 0.85rem; color: var(--slate-900);">Marcus Chen</div>
+                <div style="font-size: 0.75rem; color: var(--slate-500);">Chief Operations Officer, NovaPay</div>
+              </div>
+              <span class="status-badge status-active" style="font-size: 0.7rem;">Verified ROI</span>
+            </div>
+          </div>
+
+          <!-- Case 3 -->
+          <div class="feature-card" style="padding: 2.25rem; border-radius: var(--radius-2xl); background: var(--white); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 2.5rem; font-weight: 800; color: var(--purple-600); line-height: 1; margin-bottom: 0.5rem;">100%</div>
+              <div style="font-size: 1rem; font-weight: 700; color: var(--slate-900); margin-bottom: 1rem;">HIPAA Compliance Audit Pass</div>
+              <p style="color: var(--slate-600); font-size: 0.9rem; line-height: 1.65; font-style: italic; margin-bottom: 1.5rem;">
+                “The isolated sovereign enclaves and automated key rotation gave our compliance board immediate peace of mind during our Series B audit.”
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <div style="font-weight: 700; font-size: 0.85rem; color: var(--slate-900);">Dr. Sarah Jenkins</div>
+                <div style="font-size: 0.75rem; color: var(--slate-500);">Head of Security, BioHealth Labs</div>
+              </div>
+              <span class="status-badge status-active" style="font-size: 0.7rem;">Verified ROI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Final CTA -->
+    <section class="section" style="padding-bottom: 6rem;">
+      <div class="container">
+        <div class="final-cta-card">
+          <div class="final-cta-grid">
+            <div class="final-cta-content" style="text-align: left;">
+              <span class="section-badge section-badge-dark" style="margin-bottom: 1.25rem;">Customized Onboarding</span>
+              <h2 style="font-size: clamp(2rem, 3.8vw, 2.85rem); color: var(--white); margin-bottom: 1rem; line-height: 1.2;">
+                Find the Perfect Setup for Your Organization
+              </h2>
+              <p style="color: var(--slate-300); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.65;">
+                Whether migrating from legacy task boards or setting up your first automated engineering sprint, our onboarding specialists will configure your ideal stack.
+              </p>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="register.html" class="btn btn-primary btn-lg">Start Free Trial</a>
+                <a href="contact.html" class="btn btn-dark-outline btn-lg">Talk to Solutions Architect</a>
+              </div>
+            </div>
+
+            <div class="final-cta-img-box">
+              <img src="assets/images/cta-startup-rocket.webp" alt="Stackly Startup Onboarding & Scale Platform">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Summary -->
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.5rem; display: inline-block;">
+            <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img" style="filter: brightness(0) invert(1); height: 42px;">
+          </a>
+          <p class="footer-brand-desc">
+            Mobilizing intelligent SaaS workflows, bespoke cloud infrastructure, sustainable data intelligence, and modern team productivity for high-growth tech enterprises.
+          </p>
+          <div class="social-links-row">
+            <a href="404.html" class="social-btn" aria-label="LinkedIn">in</a>
+            <a href="404.html" class="social-btn" aria-label="X">𝕏</a>
+            <a href="404.html" class="social-btn" aria-label="Instagram">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="YouTube">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About Stackly</a>
+            <a href="product.html" class="footer-link">Product Catalog</a>
+            <a href="features.html" class="footer-link">Features Matrix</a>
+            <a href="solutions.html" class="footer-link">Solutions Hub</a>
+            <a href="pricing.html" class="footer-link">Pricing Plans</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <div class="footer-col-title">Support</div>
+          <div class="footer-links-list">
+            <a href="contact.html" class="footer-link">Contact Coordinates</a>
+            <a href="404.html" class="footer-link">Terms & Agreements</a>
+            <a href="404.html" class="footer-link">Security Audits</a>
+            <a href="resources.html" class="footer-link">Documentation & Guides</a>
+            <a href="404.html" class="footer-link">Order Status / API Status</a>
+            <a href="user-dashboard.html" class="footer-link">User Dashboard</a>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <div class="footer-col-title">Newsletter</div>
+          <p style="font-size: 0.925rem; line-height: 1.6; color: #94A3B8; margin-bottom: 1rem;">
+            Get quarterly updates, smart style alerts, and platform feature reports.
+          </p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly quarterly intelligence reports!');">
+            <input type="email" class="footer-newsletter-input" placeholder="Your Email" required>
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

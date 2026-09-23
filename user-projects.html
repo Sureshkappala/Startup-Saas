@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Projects — Manage active team projects, sprint roadmap, milestones, and deliverables.">
+  <title>Projects — Stackly Workspace</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Dashboard Layout -->
+  <div class="dashboard-layout">
+    <!-- Mobile Drawer Overlay -->
+    <div class="dashboard-drawer-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <a href="user-dashboard.html" class="brand-logo" aria-label="Stackly User Dashboard">
+          <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img" style="filter: brightness(0) invert(1); height: 38px;">
+        </a>
+        <button class="dashboard-sidebar-close" aria-label="Close Dashboard Menu">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav-list">
+        <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--slate-500); font-weight: 700; padding: 0.5rem 0.85rem;">Main Workspace</div>
+        <a href="user-dashboard.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="user-projects.html" class="sidebar-nav-link active">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          <span>Projects</span>
+        </a>
+        <a href="user-tasks.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+          <span>Tasks</span>
+        </a>
+        <a href="user-team.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <span>Team</span>
+        </a>
+        <a href="user-analytics.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Analytics</span>
+        </a>
+        <a href="user-reports.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+          <span>Reports</span>
+        </a>
+        <a href="user-files.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+          <span>Files</span>
+        </a>
+        <a href="user-notifications.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <span>Notifications</span>
+        </a>
+
+        <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--slate-500); font-weight: 700; padding: 1rem 0.85rem 0.5rem;">Account</div>
+        <a href="user-profile.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile</span>
+        </a>
+        <a href="user-settings.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <a href="user-profile.html" class="sidebar-user-card" title="View Profile">
+          <div class="sidebar-user-avatar">KS</div>
+          <div class="sidebar-user-details">
+            <span class="sidebar-user-name">Kappalasuresh92</span>
+            <span class="sidebar-user-sub">Product Lead</span>
+          </div>
+        </a>
+        <a href="login.html" class="sidebar-nav-link" style="color: #F87171;">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          <span>Log out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="dashboard-main-content">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="dashboard-menu-toggle" aria-label="Toggle Dashboard Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div>
+            <h2 style="font-size: 1.25rem;">Projects &amp; Initiatives</h2>
+            <span style="font-size: 0.8rem; color: var(--slate-500);">14 Active Projects Across 4 Pods</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+          <button class="btn btn-primary btn-sm" onclick="alert('Creating new project workspace... (Simulated)')">+ New Project</button>
+          <a href="user-notifications.html" class="topbar-icon-btn" aria-label="Notifications" title="3 New Notifications">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span class="badge-dot"></span>
+          </a>
+          <a href="user-profile.html" class="dashboard-user-widget" title="View Profile">
+            <div class="dashboard-user-avatar">
+              <span>KS</span>
+              <span class="online-indicator"></span>
+            </div>
+            <div class="dashboard-user-info">
+              <div class="dashboard-user-greeting">Welcome back, <strong>Kappalasuresh92</strong> 👋</div>
+              <div class="dashboard-user-role">Product Lead • Acme Labs</div>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <main class="dashboard-body">
+        <!-- Filter Tabs -->
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.75rem; flex-wrap: wrap;">
+          <button class="btn btn-secondary btn-sm" style="background: var(--blue-500); color: #fff; border-color: var(--blue-500);">All (14)</button>
+          <button class="btn btn-secondary btn-sm">In Progress (8)</button>
+          <button class="btn btn-secondary btn-sm">Under Review (3)</button>
+          <button class="btn btn-secondary btn-sm">Completed (3)</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          <!-- Card 1 -->
+          <div class="stat-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                <span class="status-badge status-active">In Progress</span>
+                <span style="font-size: 0.75rem; color: var(--slate-400);">Sprint 42</span>
+              </div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">Nexus Telemetry Studio v2.4</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-500); line-height: 1.5;">Migrating core telemetry streaming services to WebSockets with sub-10ms packet delivery.</p>
+            </div>
+            <div style="margin-top: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.35rem;">
+                <span style="color: var(--slate-600);">Progress</span>
+                <span style="color: var(--blue-600);">75%</span>
+              </div>
+              <div style="height: 6px; background: var(--slate-100); border-radius: 99px; overflow: hidden; margin-bottom: 1rem;">
+                <div style="width: 75%; height: 100%; background: var(--blue-500); border-radius: 99px;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--slate-100); padding-top: 0.75rem; font-size: 0.8rem; color: var(--slate-500);">
+                <span>Lead: Sarah Lin</span>
+                <span>Due: Oct 15</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="stat-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                <span class="status-badge status-active">In Progress</span>
+                <span style="font-size: 0.75rem; color: var(--slate-400);">Sprint 43</span>
+              </div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">Enterprise RBAC Governance</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-500); line-height: 1.5;">Granular permission management, SSO integrations with Okta & Azure AD, and session audit logs.</p>
+            </div>
+            <div style="margin-top: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.35rem;">
+                <span style="color: var(--slate-600);">Progress</span>
+                <span style="color: var(--emerald-500);">90%</span>
+              </div>
+              <div style="height: 6px; background: var(--slate-100); border-radius: 99px; overflow: hidden; margin-bottom: 1rem;">
+                <div style="width: 90%; height: 100%; background: var(--emerald-500); border-radius: 99px;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--slate-100); padding-top: 0.75rem; font-size: 0.8rem; color: var(--slate-500);">
+                <span>Lead: Alexandre Keller</span>
+                <span>Due: Sep 30</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="stat-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                <span class="status-badge status-pending">In Review</span>
+                <span style="font-size: 0.75rem; color: var(--slate-400);">Security</span>
+              </div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">SOC2 Type II Annual Audit</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-500); line-height: 1.5;">Continuous compliance evidence collection across cloud clusters and vulnerability mitigation.</p>
+            </div>
+            <div style="margin-top: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.35rem;">
+                <span style="color: var(--slate-600);">Progress</span>
+                <span style="color: #F59E0B;">60%</span>
+              </div>
+              <div style="height: 6px; background: var(--slate-100); border-radius: 99px; overflow: hidden; margin-bottom: 1rem;">
+                <div style="width: 60%; height: 100%; background: #F59E0B; border-radius: 99px;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--slate-100); padding-top: 0.75rem; font-size: 0.8rem; color: var(--slate-500);">
+                <span>Lead: Elena Rostova</span>
+                <span>Due: Nov 12</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="stat-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                <span class="status-badge status-active">In Progress</span>
+                <span style="font-size: 0.75rem; color: var(--slate-400);">Mobile</span>
+              </div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">iOS & Android Native Companion</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-500); line-height: 1.5;">Real-time mobile push notifications, offline sprint viewing, and fast quick-action approvals.</p>
+            </div>
+            <div style="margin-top: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.35rem;">
+                <span style="color: var(--slate-600);">Progress</span>
+                <span style="color: var(--purple-500);">40%</span>
+              </div>
+              <div style="height: 6px; background: var(--slate-100); border-radius: 99px; overflow: hidden; margin-bottom: 1rem;">
+                <div style="width: 40%; height: 100%; background: var(--purple-500); border-radius: 99px;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--slate-100); padding-top: 0.75rem; font-size: 0.8rem; color: var(--slate-500);">
+                <span>Lead: David Miller</span>
+                <span>Due: Dec 01</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Sprint Kanban & Delivery Pipeline -->
+        <div class="stat-box" style="padding: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                <h3 style="font-size: 1.2rem; font-weight: 700;">Sprint Execution & Delivery Pipeline</h3>
+                <span style="font-size: 0.725rem; background: var(--blue-50); color: var(--blue-600); border: 1px solid var(--blue-100); padding: 0.15rem 0.5rem; border-radius: 999px; font-weight: 700;">Sprint 42</span>
+              </div>
+              <span style="font-size: 0.8rem; color: var(--slate-500);">Live board across 4 stages • 4 days remaining in cycle • 100% CI/CD automated</span>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <div style="display: inline-flex; background: var(--slate-100); padding: 3px; border-radius: var(--radius-md); border: 1px solid var(--slate-200);">
+                <button class="btn btn-sm" style="padding: 0.35rem 0.75rem; font-size: 0.775rem; background: #FFFFFF; color: var(--slate-800); box-shadow: var(--shadow-xs); border: none; font-weight: 600; border-radius: var(--radius-sm);">Board View</button>
+                <button class="btn btn-sm" style="padding: 0.35rem 0.75rem; font-size: 0.775rem; background: transparent; color: var(--slate-500); border: none; font-weight: 500;">Timeline</button>
+                <button class="btn btn-sm" style="padding: 0.35rem 0.75rem; font-size: 0.775rem; background: transparent; color: var(--slate-500); border: none; font-weight: 500;">List</button>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="alert('Add Task Modal: Enter issue title and pod assignment.')" style="display: inline-flex; align-items: center; gap: 0.35rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Add Task</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div style="display: flex; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--slate-200); font-size: 0.8rem;">
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--blue-500);"></span>
+              <strong style="color: var(--slate-800);">Active Tasks:</strong> <span style="color: var(--slate-600);">14 In Scope</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--emerald-500);"></span>
+              <strong style="color: var(--slate-800);">Velocity:</strong> <span style="color: var(--slate-600);">48 pts/wk (On Track)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #8B5CF6;"></span>
+              <strong style="color: var(--slate-800);">Deploy Health:</strong> <span style="color: var(--slate-600);">99.98% Success</span>
+            </div>
+          </div>
+
+          <!-- 4-Column Responsive Kanban Board -->
+          <div class="kanban-board-wrapper">
+            <!-- Col 1: Backlog -->
+            <div class="kanban-column">
+              <div class="kanban-col-header">
+                <div class="kanban-col-title">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--slate-400);"></span>
+                  <span>Backlog</span>
+                </div>
+                <span class="kanban-col-badge">2</span>
+              </div>
+              <div class="kanban-card-list">
+                <!-- Card 1 -->
+                <div class="kanban-card">
+                  <div class="kanban-card-meta">
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-400); font-weight: 700;">API / AI</span>
+                    <span style="font-size: 0.7rem; font-weight: 600; color: var(--slate-400);">#ST-104</span>
+                  </div>
+                  <h4 class="kanban-card-title">AI Smart Triage & Error Clustering</h4>
+                  <p class="kanban-card-desc">Auto-classify telemetry errors and cluster anomalies using semantic vector embeddings.</p>
+                  <div class="kanban-card-tags">
+                    <span class="kanban-tag kanban-tag-rose">High Priority</span>
+                    <span class="kanban-tag kanban-tag-blue">AI/ML</span>
+                  </div>
+                  <div style="margin-bottom: 0.75rem;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--slate-500); margin-bottom: 0.25rem;">
+                      <span>Subtasks</span>
+                      <span>2/5 Done</span>
+                    </div>
+                    <div style="height: 4px; background: var(--slate-100); border-radius: 99px; overflow: hidden;">
+                      <div style="width: 40%; height: 100%; background: var(--blue-500);"></div>
+                    </div>
+                  </div>
+                  <div class="kanban-card-footer">
+                    <div style="display: flex; align-items: center; gap: 0.35rem;">
+                      <span class="kanban-avatar" style="background: var(--blue-500);">AM</span>
+                      <span>Alex M.</span>
+                    </div>
+                    <span style="color: var(--slate-400);">Due Oct 24</span>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="kanban-card">
+                  <div class="kanban-card-meta">
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-400); font-weight: 700;">Architecture</span>
+                    <span style="font-size: 0.7rem; font-weight: 600; color: var(--slate-400);">#ST-109</span>
+                  </div>
+                  <h4 class="kanban-card-title">GraphQL Federation Gateway</h4>
+                  <p class="kanban-card-desc">Migrate REST polling listeners to sub-5ms WebSocket Apollo subscriptions.</p>
+                  <div class="kanban-card-tags">
+                    <span class="kanban-tag kanban-tag-purple">Backend</span>
+                    <span class="kanban-tag kanban-tag-blue">WebSockets</span>
+                  </div>
+                  <div class="kanban-card-footer">
+                    <div style="display: flex; align-items: center; gap: 0.35rem;">
+                      <span class="kanban-avatar" style="background: #8B5CF6;">MP</span>
+                      <span>Marcus P.</span>
+                    </div>
+                    <span style="color: var(--slate-400);">Due Nov 02</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Col 2: In Progress -->
+            <div class="kanban-column">
+              <div class="kanban-col-header">
+                <div class="kanban-col-title">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--blue-500);"></span>
+                  <span>In Progress</span>
+                </div>
+                <span class="kanban-col-badge" style="background: var(--blue-100); color: var(--blue-700);">2</span>
+              </div>
+              <div class="kanban-card-list">
+                <!-- Card 3 -->
+                <div class="kanban-card" style="border-left: 3px solid var(--blue-500);">
+                  <div class="kanban-card-meta">
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--blue-600); font-weight: 700;">Core Infra</span>
+                    <span style="font-size: 0.7rem; font-weight: 600; color: var(--slate-400);">#ST-092</span>
+                  </div>
+                  <h4 class="kanban-card-title">Nexus Telemetry v2.4 Streaming</h4>
+                  <p class="kanban-card-desc">Sub-10ms packet delivery across regional edge nodes with zero data drop.</p>
+                  <div class="kanban-card-tags">
+                    <span class="kanban-tag kanban-tag-rose">P0 Blocker</span>
+                    <span class="kanban-tag kanban-tag-blue">Sprint 42</span>
+                  </div>
+                  <div style="margin-bottom: 0.75rem;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--slate-500); margin-bottom: 0.25rem;">
+                      <span>Progress</span>
+                      <span style="color: var(--blue-600); font-weight: 700;">75%</span>
+                    </div>
+                    <div style="height: 4px; background: var(--slate-100); border-radius: 99px; overflow: hidden;">
+                      <div style="width: 75%; height: 100%; background: var(--blue-500);"></div>
+                    </div>
+                  </div>
+                  <div class="kanban-card-footer">
+                    <div style="display: flex; align-items: center; gap: 0.35rem;">
+                      <span class="kanban-avatar" style="background: #10B981;">SL</span>
+                      <span>Sarah L.</span>
+                    </div>
+                    <span style="color: var(--blue-600); font-weight: 600;">Due Sep 30</span>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="kanban-card" style="border-left: 3px solid var(--blue-500);">
+                  <div class="kanban-card-meta">
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--purple-600); font-weight: 700;">Security</span>
+                    <span style="font-size: 0.7rem; font-weight: 600; color: var(--slate-400);">#ST-088</span>
+                  </div>
+                  <h4 class="kanban-card-title">Enterprise SAML & Okta SCIM Sync</h4>
+                  <p class="kanban-card-desc">Directory provisioning, RBAC role-mapping, and audit log generation.</p>
+                  <div class="kanban-card-tags">
+                    <span class="kanban-tag kanban-tag-purple">Enterprise</span>
+                    <span class="kanban-tag kanban-tag-amber">Security</span>
+                  </div>
+                  <div style="margin-bottom: 0.75rem;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--slate-500); margin-bottom: 0.25rem;">
+                      <span>Progress</span>
+                      <span style="color: var(--emerald-500); font-weight: 700;">90%</span>
+                    </div>
+                    <div style="height: 4px; background: var(--slate-100); border-radius: 99px; overflow: hidden;">
+                      <div style="width: 90%; height: 100%; background: var(--emerald-500);"></div>
+                    </div>
+                  </div>
+                  <div class="kanban-card-footer">
+                    <div style="display: flex; align-items: center; gap: 0.35rem;">
+                      <span class="kanban-avatar" style="background: #F59E0B;">AK</span>
+                      <span>Alex K.</span>
+                    </div>
+                    <span style="color: var(--slate-500);">Due Oct 05</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Col 3: Review & QA -->
+            <div class="kanban-column">
+              <div class="kanban-col-header">
+                <div class="kanban-col-title">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--amber-500);"></span>
+                  <span>Code Review & QA</span>
+                </div>
+                <span class="kanban-col-badge" style="background: #FEF3C7; color: #B45309;">2</span>
+              </div>
+              <div class="kanban-card-list">
+                <!-- Card 5 -->
+                <div class="kanban-card" style="border-left: 3px solid #F59E0B;">
+                  <div class="kanban-card-meta">
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #B45309; font-weight: 700;">Performance</span>
+                    <span style="font-size: 0.7rem; font-weight: 600; color: var(--slate-400);">#ST-079</span>
+                  </div>
+                  <h4 class="kanban-card-title">Distributed Redis Rate Limiter</h4>
+                  <p class="kanban-card-desc">Sliding window algorithm supporting 50,000 req/sec with zero latency penalty.</p>
+                  <div class="kanban-card-tags">
+                    <span class="kanban-tag kanban-tag-amber">2 Approvals</span>
+                    <span class="kanban-tag kanban-tag-blue">CI Passed</span>
+                  </div>
+                  <div class="kanban-card-footer">
+                    <div style="display: flex; align-items: center; gap: 0.35rem;">
+                      <span class="kanban-avatar" style="background: #EC4899;">ER</span>
+                      <span>Elena R.</span>
+                    </div>
+                    <span style="color: #B45309; font-weight: 600;">Due Tomorrow</span>
+                  </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="kanban-card" style="border-left: 3px solid #F59E0B;">
+                  <div class="kanban-card-meta">
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--purple-600); font-weight: 700;">Fintech</span>
+                    <span style="font-size: 0.7rem; font-weight: 600; color: var(--slate-400);">#ST-074</span>
+                  </div>
+                  <h4 class="kanban-card-title">Usage Metering Webhook Sync</h4>
+                  <p class="kanban-card-desc">High-concurrency idempotent invoice aggregation engine for Stripe API v3.</p>
+                  <div class="kanban-card-tags">
+                    <span class="kanban-tag kanban-tag-purple">Billing</span>
+                    <span class="kanban-tag kanban-tag-amber">1 Review Pending</span>
+                  </div>
+                  <div class="kanban-card-footer">
+                    <div style="display: flex; align-items: center; gap: 0.35rem;">
+                      <span class="kanban-avatar" style="background: #3B82F6;">DM</span>
+                      <span>David M.</span>
+                    </div>
+                    <span style="color: var(--slate-500);">Due Sep 28</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Col 4: Completed -->
+            <div class="kanban-column">
+              <div class="kanban-col-header">
+                <div class="kanban-col-title">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--emerald-500);"></span>
+                  <span>Completed & Deployed</span>
+                </div>
+                <span class="kanban-col-badge" style="background: #D1FAE5; color: #047857;">2</span>
+              </div>
+              <div class="kanban-card-list">
+                <!-- Card 7 -->
+                <div class="kanban-card" style="border-left: 3px solid #10B981;">
+                  <div class="kanban-card-meta">
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #047857; font-weight: 700;">DevOps</span>
+                    <span style="font-size: 0.7rem; font-weight: 600; color: var(--slate-400);">#ST-061</span>
+                  </div>
+                  <h4 class="kanban-card-title">Global Edge CDN Route Optimization</h4>
+                  <p class="kanban-card-desc">Multi-region asset pre-warming across 32 PoPs with 42% latency reduction.</p>
+                  <div class="kanban-card-tags">
+                    <span class="kanban-tag kanban-tag-emerald">Shipped v2.3.9</span>
+                    <span class="kanban-tag kanban-tag-blue">All Tests Passed</span>
+                  </div>
+                  <div class="kanban-card-footer">
+                    <div style="display: flex; align-items: center; gap: 0.35rem;">
+                      <span class="kanban-avatar" style="background: #10B981;">SL</span>
+                      <span>Sarah L.</span>
+                    </div>
+                    <span style="color: #047857; font-weight: 600;">Shipped Yesterday</span>
+                  </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="kanban-card" style="border-left: 3px solid #10B981;">
+                  <div class="kanban-card-meta">
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #047857; font-weight: 700;">Frontend</span>
+                    <span style="font-size: 0.7rem; font-weight: 600; color: var(--slate-400);">#ST-055</span>
+                  </div>
+                  <h4 class="kanban-card-title">Accessibility & Theme Tokens Overhaul</h4>
+                  <p class="kanban-card-desc">WCAG AAA compliant palette with responsive typography variables.</p>
+                  <div class="kanban-card-tags">
+                    <span class="kanban-tag kanban-tag-emerald">Verified</span>
+                    <span class="kanban-tag kanban-tag-purple">UI System</span>
+                  </div>
+                  <div class="kanban-card-footer">
+                    <div style="display: flex; align-items: center; gap: 0.35rem;">
+                      <span class="kanban-avatar" style="background: var(--blue-500);">AM</span>
+                      <span>Alex M.</span>
+                    </div>
+                    <span style="color: #047857; font-weight: 600;">Shipped 3d ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

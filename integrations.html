@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connect Stackly with over 200+ industry-leading tools including Slack, GitHub, Stripe, Google Workspace, AWS, and Notion.">
+  <title>Integrations & App Marketplace — Stackly SaaS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img">
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="product.html" class="nav-link">Product</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-trigger-btn" aria-label="Open Search">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search...</span>
+          <kbd>⌘K</kbd>
+        </button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Log in</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="mobile-toggle-btn" aria-label="Toggle Menu">
+          <svg class="icon icon-lg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close Menu">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-search-wrap">
+      <div class="mobile-drawer-search-box search-trigger-btn">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Search features, docs...</span>
+      </div>
+    </div>
+
+    <nav class="mobile-drawer-nav">
+      <a href="index.html" class="mobile-nav-link"><span>Home</span> <span class="nav-dash"></span></a>
+      <a href="about.html" class="mobile-nav-link"><span>About Us</span> <span class="nav-dash"></span></a>
+      <a href="product.html" class="mobile-nav-link"><span>Product</span> <span class="nav-dash"></span></a>
+      <a href="features.html" class="mobile-nav-link"><span>Features</span> <span class="nav-dash"></span></a>
+      <a href="solutions.html" class="mobile-nav-link"><span>Solutions</span> <span class="nav-dash"></span></a>
+      <a href="pricing.html" class="mobile-nav-link"><span>Pricing</span> <span class="nav-dash"></span></a>
+      <a href="contact.html" class="mobile-nav-link"><span>Customer Contact</span> <span class="nav-dash"></span></a>
+    </nav>
+
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">LOGIN</a>
+      <a href="register.html" class="btn btn-secondary" style="width: 100%;">MY ACCOUNT</a>
+      <div class="mobile-drawer-concierge">
+        <div class="mobile-drawer-concierge-title">DIRECT WORKSPACE CONCIERGE</div>
+        <div class="concierge-info-grid">
+          <div class="concierge-row"><span class="concierge-label">Call:</span> <a href="tel:+18005557825" class="concierge-val">+1 (800) 555-STCK</a></div>
+          <div class="concierge-row"><span class="concierge-label">Email:</span> <a href="mailto:concierge@stackly.com" class="concierge-val">concierge@stackly.com</a></div>
+          <div class="concierge-row"><span class="concierge-label">Hubs:</span> <span class="concierge-val">California • Oregon • Midwest • Texas</span></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="search-modal-overlay">
+    <div class="search-modal-container">
+      <div class="search-input-wrapper">
+        <svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input-field" placeholder="Search features, solutions, docs..." autofocus>
+        <button class="search-modal-close btn-ghost btn-sm">ESC</button>
+      </div>
+      <div class="search-results-box"></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Header -->
+    <section class="section section-dark" style="padding: 5rem 0 3.5rem; text-align: center;">
+      <div class="container">
+        <span class="section-badge section-badge-dark">App Marketplace</span>
+        <h1 style="max-width: 800px; margin: 0.5rem auto 1rem;">Connect Every App in Your Stack</h1>
+        <p style="max-width: 650px; margin: 0 auto; color: var(--slate-300); font-size: 1.15rem;">
+          Power your workflows with pre-built native integrations for communication, developer tooling, payments, CRM, and cloud storage.
+        </p>
+      </div>
+    </section>
+
+    <!-- Integrations Directory -->
+    <section class="section">
+      <div class="container">
+        <!-- Cloud SaaS Network Banner -->
+        <div class="feature-img-box" style="max-width: 920px; margin: 0 auto 3.5rem; border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px -10px rgba(0,0,0,0.5);">
+          <img src="assets/images/cloud-saas-network.webp" alt="Stackly Cloud SaaS Connected Ecosystem Network">
+        </div>
+
+        <div class="integrations-grid">
+          <!-- 1 -->
+          <div class="integration-card">
+            <img src="assets/images/logo-slack.svg" alt="Slack" style="height: 32px; width: auto;">
+            <div>
+              <h4 style="font-size:1rem; margin-bottom: 0.15rem;">Slack</h4>
+              <span style="font-size:0.75rem; color:var(--slate-500);">Two-way channel triggers</span>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="integration-card">
+            <img src="assets/images/logo-github.svg" alt="GitHub" style="height: 32px; width: auto;">
+            <div>
+              <h4 style="font-size:1rem; margin-bottom: 0.15rem;">GitHub</h4>
+              <span style="font-size:0.75rem; color:var(--slate-500);">PRs & issue sync</span>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="integration-card">
+            <img src="assets/images/logo-stripe.svg" alt="Stripe" style="height: 32px; width: auto;">
+            <div>
+              <h4 style="font-size:1rem; margin-bottom: 0.15rem;">Stripe</h4>
+              <span style="font-size:0.75rem; color:var(--slate-500);">Customer invoice events</span>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="integration-card">
+            <img src="assets/images/logo-linear.svg" alt="Linear" style="height: 32px; width: auto;">
+            <div>
+              <h4 style="font-size:1rem; margin-bottom: 0.15rem;">Linear</h4>
+              <span style="font-size:0.75rem; color:var(--slate-500);">Issue & sprint tracker</span>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="integration-card">
+            <img src="assets/images/logo-notion.svg" alt="Notion" style="height: 32px; width: auto;">
+            <div>
+              <h4 style="font-size:1rem; margin-bottom: 0.15rem;">Notion</h4>
+              <span style="font-size:0.75rem; color:var(--slate-500);">Document database sync</span>
+            </div>
+          </div>
+          <!-- 6 -->
+          <div class="integration-card">
+            <img src="assets/images/logo-figma.svg" alt="Figma" style="height: 32px; width: auto;">
+            <div>
+              <h4 style="font-size:1rem; margin-bottom: 0.15rem;">Figma</h4>
+              <span style="font-size:0.75rem; color:var(--slate-500);">Design asset webhooks</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud Edge Infrastructure Section with Quantum Cloud Image -->
+        <div class="product-showcase-grid" style="margin-top: 5rem; align-items: center; background: #0B1120; padding: 3rem; border-radius: var(--radius-2xl); border: 1px solid rgba(255,255,255,0.1); color: #fff;">
+          <div>
+            <span class="section-badge section-badge-dark" style="margin-bottom: 1rem;">Quantum Cloud Mesh</span>
+            <h2 style="color: #fff; font-size: 2.1rem; margin-bottom: 1rem;">Global Edge Webhooks & Real-Time Sync</h2>
+            <p style="color: var(--slate-300); line-height: 1.7; font-size: 1rem; margin-bottom: 1.5rem;">
+              Deploy custom webhook listeners and streaming event handlers across 35+ global edge locations with sub-10ms delivery guarantees and automated retry queues.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="register.html" class="btn btn-primary">Deploy Webhooks</a>
+              <a href="resources.html" class="btn btn-dark-outline">Read API Docs</a>
+            </div>
+          </div>
+
+          <div class="feature-img-box" style="margin-bottom: 0; border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.6);">
+            <img src="assets/images/cloud-quantum-neon.webp" alt="Stackly Quantum Cloud Edge Infrastructure">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section" style="padding-bottom: 6rem;">
+      <div class="container">
+        <div class="final-cta-card">
+          <div class="final-cta-grid">
+            <div class="final-cta-content" style="text-align: left;">
+              <span class="section-badge section-badge-dark" style="margin-bottom: 1.25rem;">Ecosystem Scale</span>
+              <h2 style="color: var(--white); font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 1rem; line-height: 1.2;">
+                Supercharge Your Startup Ecosystem Today
+              </h2>
+              <p style="color: var(--slate-300); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.65;">
+                Seamlessly connect all your favorite tools, configure automated event triggers, and eliminate manual synchronization friction.
+              </p>
+              <a href="register.html" class="btn btn-primary btn-lg">Start Free Integration</a>
+            </div>
+
+            <div class="final-cta-img-box">
+              <img src="assets/images/cta-startup-rocket.webp" alt="Stackly Startup Launch Platform Engine">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Summary -->
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.5rem; display: inline-block;">
+            <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img" style="filter: brightness(0) invert(1); height: 42px;">
+          </a>
+          <p class="footer-brand-desc">
+            Mobilizing intelligent SaaS workflows, bespoke cloud infrastructure, sustainable data intelligence, and modern team productivity for high-growth tech enterprises.
+          </p>
+          <div class="social-links-row">
+            <a href="404.html" class="social-btn" aria-label="LinkedIn">in</a>
+            <a href="404.html" class="social-btn" aria-label="X">𝕏</a>
+            <a href="404.html" class="social-btn" aria-label="Instagram">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="YouTube">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About Stackly</a>
+            <a href="product.html" class="footer-link">Product Catalog</a>
+            <a href="features.html" class="footer-link">Features Matrix</a>
+            <a href="solutions.html" class="footer-link">Solutions Hub</a>
+            <a href="pricing.html" class="footer-link">Pricing Plans</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <div class="footer-col-title">Support</div>
+          <div class="footer-links-list">
+            <a href="contact.html" class="footer-link">Contact Coordinates</a>
+            <a href="404.html" class="footer-link">Terms & Agreements</a>
+            <a href="404.html" class="footer-link">Security Audits</a>
+            <a href="resources.html" class="footer-link">Documentation & Guides</a>
+            <a href="404.html" class="footer-link">Order Status / API Status</a>
+            <a href="user-dashboard.html" class="footer-link">User Dashboard</a>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <div class="footer-col-title">Newsletter</div>
+          <p style="font-size: 0.925rem; line-height: 1.6; color: #94A3B8; margin-bottom: 1rem;">
+            Get quarterly updates, smart style alerts, and platform feature reports.
+          </p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly quarterly intelligence reports!');">
+            <input type="email" class="footer-newsletter-input" placeholder="Your Email" required>
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

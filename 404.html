@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="404 — This workspace or page does not exist on Stackly.">
+  <title>404 — Workspace Not Found — Stackly SaaS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background: radial-gradient(circle at 50% 10%, #1E293B 0%, var(--navy-900) 65%, #060911 100%); min-height: 100vh; display: flex; flex-direction: column; color: var(--white);">
+
+  <!-- 404 Main -->
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 4rem 1.5rem; text-align: center;">
+    <div style="max-width: 580px; margin: 0 auto;">
+      <!-- Abstract Vector SVG Graphic -->
+      <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem auto; border-radius: 50%; background: rgba(37,99,235,0.12); border: 2px dashed rgba(59,130,246,0.3); display: flex; align-items: center; justify-content: center; position: relative;">
+        <svg style="width: 64px; height: 64px; color: #60A5FA;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+      </div>
+
+      <div style="font-family: var(--font-heading); font-size: clamp(3.5rem, 8vw, 6rem); font-weight: 800; line-height: 1; margin-bottom: 0.5rem;" class="gradient-text-light">404</div>
+      <h1 style="font-size: clamp(1.5rem, 3.5vw, 2.25rem); color: var(--white); margin-bottom: 1rem;">This workspace doesn't exist.</h1>
+      <p style="color: var(--slate-300); font-size: 1.05rem; line-height: 1.6; margin-bottom: 2.5rem;">
+        The requested URL was not found on our server, or you might not have the required role permissions to view this resource.
+      </p>
+
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="index.html" class="btn btn-primary btn-lg">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Back to Home</span>
+        </a>
+        <button type="button" onclick="history.length > 1 ? history.back() : window.location.href='index.html'" class="btn btn-dark-outline btn-lg" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Go Back</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer style="text-align: center; padding: 1.5rem; font-size: 0.8rem; color: var(--slate-500); border-top: 1px solid rgba(255,255,255,0.08);">
+    © 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

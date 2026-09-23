@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Stackly support and sales. Schedule an architectural consultation or get answers to your questions.">
+  <title>Contact Us & Support — Stackly SaaS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img">
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="product.html" class="nav-link">Product</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-trigger-btn" aria-label="Open Search">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search...</span>
+          <kbd>⌘K</kbd>
+        </button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Log in</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="mobile-toggle-btn" aria-label="Toggle Menu">
+          <svg class="icon icon-lg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close Menu">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-search-wrap">
+      <div class="mobile-drawer-search-box search-trigger-btn">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Search features, docs...</span>
+      </div>
+    </div>
+
+    <nav class="mobile-drawer-nav">
+      <a href="index.html" class="mobile-nav-link"><span>Home</span> <span class="nav-dash"></span></a>
+      <a href="about.html" class="mobile-nav-link"><span>About Us</span> <span class="nav-dash"></span></a>
+      <a href="product.html" class="mobile-nav-link"><span>Product</span> <span class="nav-dash"></span></a>
+      <a href="features.html" class="mobile-nav-link"><span>Features</span> <span class="nav-dash"></span></a>
+      <a href="solutions.html" class="mobile-nav-link"><span>Solutions</span> <span class="nav-dash"></span></a>
+      <a href="pricing.html" class="mobile-nav-link"><span>Pricing</span> <span class="nav-dash"></span></a>
+      <a href="contact.html" class="mobile-nav-link active"><span>Customer Contact</span> <span class="nav-dash"></span></a>
+    </nav>
+
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">LOGIN</a>
+      <a href="register.html" class="btn btn-secondary" style="width: 100%;">MY ACCOUNT</a>
+      <div class="mobile-drawer-concierge">
+        <div class="mobile-drawer-concierge-title">DIRECT WORKSPACE CONCIERGE</div>
+        <div class="concierge-info-grid">
+          <div class="concierge-row"><span class="concierge-label">Call:</span> <a href="tel:+18005557825" class="concierge-val">+1 (800) 555-STCK</a></div>
+          <div class="concierge-row"><span class="concierge-label">Email:</span> <a href="mailto:concierge@stackly.com" class="concierge-val">concierge@stackly.com</a></div>
+          <div class="concierge-row"><span class="concierge-label">Hubs:</span> <span class="concierge-val">California • Oregon • Midwest • Texas</span></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="search-modal-overlay">
+    <div class="search-modal-container">
+      <div class="search-input-wrapper">
+        <svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input-field" placeholder="Search features, solutions, docs..." autofocus>
+        <button class="search-modal-close btn-ghost btn-sm">ESC</button>
+      </div>
+      <div class="search-results-box"></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         PAGE HERO — 2-COLUMN SPLIT SHOWCASE (LEFT CONTENT & RIGHT MOCKUP)
+         ========================================================================== -->
+    <section class="hero-section" style="padding: 5.5rem 0 6.5rem;">
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+      
+      <div class="container container-wide">
+        <div class="hero-split-grid">
+          <!-- Left: Contact Narrative & Quick Channel Badges -->
+          <div class="hero-content">
+            <div class="hero-badge-wrap">
+              <span class="hero-badge-pill">Global Support</span>
+              <span>24/7 Live Engineering &amp; Solutions Squad</span>
+            </div>
+
+            <h1 class="hero-title">
+              Let's Connect &amp; Scale <br>
+              <span class="gradient-text-light">Your Team's Operations.</span>
+            </h1>
+
+            <p class="hero-desc">
+              Have questions about custom SLAs, enterprise migration, custom data integrations, or need technical onboarding? Our specialists typically respond within 2 hours.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#inquiry" class="btn btn-primary btn-lg">
+                <span>Send a Message</span>
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </a>
+              <a href="resources.html" class="btn btn-dark-outline btn-lg">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Read Developer Docs</span>
+              </a>
+            </div>
+
+            <!-- Support Guarantees -->
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--slate-300); font-size: 0.85rem; font-weight: 500;">
+                <svg class="icon icon-sm" style="color: #10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Sub-2h Response Time</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--slate-300); font-size: 0.85rem; font-weight: 500;">
+                <svg class="icon icon-sm" style="color: #10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dedicated Enterprise Account Mgr</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--slate-300); font-size: 0.85rem; font-weight: 500;">
+                <svg class="icon icon-sm" style="color: #10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>SOC2 Type II Protected</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Global Engineering & Support Squad Showcase -->
+          <div class="hero-showcase-wrapper">
+            <div class="hero-dashboard-container">
+              <!-- Floating Badge 1 -->
+              <div class="floating-badge floating-badge-1" style="background: rgba(11, 15, 25, 0.92); border: 1px solid rgba(59, 130, 246, 0.4);">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(59, 130, 246, 0.2); display: flex; align-items: center; justify-content: center; color: #60A5FA;">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <div>
+                  <div style="font-size: 0.72rem; color: var(--slate-400);">✨ Live Concierge</div>
+                  <div style="font-weight: 700; color: #38BDF8; font-size: 0.85rem;">15min Avg Resolution</div>
+                </div>
+              </div>
+
+              <!-- Floating Badge 2 -->
+              <div class="floating-badge floating-badge-2" style="background: rgba(11, 15, 25, 0.92); border: 1px solid rgba(16, 185, 129, 0.4);">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(16, 185, 129, 0.2); display: flex; align-items: center; justify-content: center; color: #34D399;">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div>
+                  <div style="font-size: 0.72rem; color: var(--slate-400);">San Francisco HQ</div>
+                  <div style="font-weight: 700; color: #10B981; font-size: 0.85rem;">Global Operations Active</div>
+                </div>
+              </div>
+
+              <!-- Mockup Frame -->
+              <div class="hero-dashboard-mockup">
+                <div class="mockup-header-bar">
+                  <div class="mockup-dots">
+                    <span class="mockup-dot red"></span>
+                    <span class="mockup-dot yellow"></span>
+                    <span class="mockup-dot green"></span>
+                  </div>
+                  <div class="mockup-url-bar">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>stackly.app/support/operations-hub</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="display:inline-block; width: 8px; height: 8px; border-radius:50%; background:#10B981;"></span>
+                    <span style="font-size: 0.75rem; color: #10B981; font-weight: 600;">Engineers Online</span>
+                  </div>
+                </div>
+
+                <div class="hero-preview-img-container">
+                  <img src="assets/images/team-collaboration-office.webp" alt="Stackly Dedicated Global Engineering &amp; Support Squad" loading="eager">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form & Info Layout -->
+    <section id="inquiry" class="section" style="padding: 5.5rem 0;">
+      <div class="container">
+        <div class="contact-inquiry-grid">
+          <!-- Form -->
+          <div class="auth-card contact-form-card">
+            <div>
+              <span class="section-badge" style="margin-bottom: 0.75rem;">Direct Ticket</span>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Send Us a Message</h3>
+              <p style="font-size: 0.875rem; color: var(--slate-500); margin-bottom: 2rem;">We typically reply within 2 hours during business hours.</p>
+
+              <form id="contactForm" class="needs-validation" novalidate>
+                <div class="form-row-2col">
+                  <div class="form-group">
+                    <label class="form-label" for="contactName">Full Name *</label>
+                    <input type="text" id="contactName" class="form-control" placeholder="Jane Doe" required pattern="[A-Za-z\s.'-]+" data-type="name" title="Letters only (no numbers allowed)">
+                    <div class="form-error-msg">Please enter your full name (letters only, no digits).</div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="contactEmail">Work Email *</label>
+                    <input type="email" id="contactEmail" class="form-control" placeholder="jane@company.com" required>
+                    <div class="form-error-msg">Please enter a valid work email.</div>
+                  </div>
+                </div>
+
+                <div class="form-row-2col">
+                  <div class="form-group">
+                    <label class="form-label" for="contactMobile">Mobile Number *</label>
+                    <input type="tel" id="contactMobile" class="form-control" placeholder="+1 (555) 000-0000" required pattern="[\d\s+\-()]+" inputmode="tel" data-type="tel" title="Numbers only (no letters allowed)">
+                    <div class="form-error-msg">Please enter a valid mobile number (digits only, no letters).</div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="contactCompany">Company Name *</label>
+                    <input type="text" id="contactCompany" class="form-control" placeholder="Acme Labs Inc." required>
+                    <div class="form-error-msg">Please enter your company name.</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contactSubject">Subject *</label>
+                  <select id="contactSubject" class="form-control" required>
+                    <option value="" disabled selected>Select an inquiry topic</option>
+                    <option value="sales">Enterprise Sales &amp; Pricing</option>
+                    <option value="demo">Request Product Demo</option>
+                    <option value="support">Technical Support</option>
+                    <option value="partnership">Integrations &amp; Partnerships</option>
+                  </select>
+                  <div class="form-error-msg">Please select an inquiry topic.</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contactMessage">Your Message *</label>
+                  <textarea id="contactMessage" class="form-control" rows="4" placeholder="Tell us how we can help your team..." required></textarea>
+                  <div class="form-error-msg">Please provide your message details.</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                  <span>Submit Inquiry</span>
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Info Cards -->
+          <div style="display: flex; flex-direction: column; gap: 1.5rem; justify-content: space-between;">
+            <!-- Support Channels Card -->
+            <div class="feature-card feature-card-lavender" style="padding: 1.75rem;">
+              <div class="feature-icon-badge"><svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+              <h3 style="font-size: 1.2rem; margin: 0.5rem 0 0.25rem;">Direct Communication</h3>
+              <p style="color: var(--slate-600); font-size: 0.9rem; margin-bottom: 1.25rem;">Reach our global customer operations and sales team directly.</p>
+              <div style="font-size: 0.9rem; color: var(--slate-800); display: flex; flex-direction: column; gap: 0.6rem;">
+                <div><strong style="color: var(--blue-600);">Email:</strong> support@stackly.io</div>
+                <div><strong style="color: var(--purple-600);">Sales:</strong> enterprise@stackly.io</div>
+                <div><strong style="color: var(--slate-900);">Direct Line:</strong> +1 (800) 555-STACK (7822)</div>
+              </div>
+            </div>
+
+            <!-- HQ Card -->
+            <div class="feature-card" style="padding: 1.75rem;">
+              <div class="feature-icon-badge purple"><svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+              <h3 style="font-size: 1.2rem; margin: 0.5rem 0 0.25rem;">Global Headquarters</h3>
+              <p style="color: var(--slate-600); font-size: 0.9rem; margin-bottom: 0.75rem; line-height: 1.6;">500 Howard Street, Suite 400<br>San Francisco, CA 94105, USA</p>
+              <div style="font-size: 0.85rem; color: var(--slate-500);">Open Hours: Mon – Fri, 8:00 AM – 6:00 PM PST</div>
+            </div>
+
+            <!-- Enterprise SLA Card -->
+            <div class="feature-card" style="padding: 1.5rem; background: var(--slate-900); color: var(--slate-300); border-color: rgba(255,255,255,0.1);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span style="font-size: 0.75rem; font-weight: 700; color: #10B981; text-transform: uppercase;">Enterprise SLA</span>
+                <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.2); color: #34D399; padding: 0.15rem 0.5rem; border-radius: var(--radius-full);">99.99% Uptime</span>
+              </div>
+              <p style="font-size: 0.825rem; color: var(--slate-400); margin: 0;">Dedicated TAM, 15-minute P0 incident turnaround, and SOC2 certified infrastructure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Map: Stackly Global Headquarters -->
+    <section class="section" style="padding: 0 0 6rem 0;">
+      <div class="container">
+        <div class="section-title">
+          <span class="section-badge section-badge-purple">Visit Our Campus</span>
+          <h2>Stackly Global Headquarters Location</h2>
+          <p>Drop by our San Francisco engineering hub for architectural consultations, developer meetups, and partner workshops.</p>
+        </div>
+
+        <div class="map-embed-wrapper">
+          <!-- Map Floating Info Card -->
+          <div class="map-floating-card">
+            <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;">
+              <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #10B981; box-shadow: 0 0 10px #10B981;"></span>
+              <span style="font-size: 0.75rem; font-weight: 700; color: #10B981; text-transform: uppercase; letter-spacing: 0.05em;">San Francisco HQ</span>
+            </div>
+            <h3 style="font-size: 1.15rem; color: var(--white); margin-bottom: 0.35rem;">Stackly Technologies Inc.</h3>
+            <p style="font-size: 0.85rem; color: var(--slate-300); line-height: 1.5; margin-bottom: 1rem;">
+              500 Howard Street, Suite 400<br>San Francisco, CA 94105, United States
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.8rem; color: var(--slate-300); border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.75rem; margin-bottom: 1.25rem;">
+              <div>🕒 <strong>Hours:</strong> Mon–Fri: 8:00 AM – 6:00 PM PST</div>
+              <div>📞 <strong>Phone:</strong> +1 (800) 555-STACK (7822)</div>
+              <div>📍 <strong>Transit:</strong> Montgomery St BART Station (3 min walk)</div>
+            </div>
+            <a href="https://maps.google.com/?q=500+Howard+Street,+San+Francisco,+CA+94105" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center; gap: 0.5rem;">
+              <span>Get Directions</span>
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+
+          <!-- Google Maps Iframe -->
+          <iframe 
+            title="Stackly Global Headquarters Google Map Location"
+            src="https://maps.google.com/maps?q=500+Howard+Street,+San+Francisco,+CA+94105&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+            width="100%" 
+            height="480" 
+            style="border:0; display: block; width: 100%; min-height: 480px; filter: contrast(1.05);" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Summary -->
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.5rem; display: inline-block;">
+            <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img" style="filter: brightness(0) invert(1); height: 42px;">
+          </a>
+          <p class="footer-brand-desc">
+            Mobilizing intelligent SaaS workflows, bespoke cloud infrastructure, sustainable data intelligence, and modern team productivity for high-growth tech enterprises.
+          </p>
+          <div class="social-links-row">
+            <a href="404.html" class="social-btn" aria-label="LinkedIn">in</a>
+            <a href="404.html" class="social-btn" aria-label="X">𝕏</a>
+            <a href="404.html" class="social-btn" aria-label="Instagram">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="YouTube">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About Stackly</a>
+            <a href="product.html" class="footer-link">Product Catalog</a>
+            <a href="features.html" class="footer-link">Features Matrix</a>
+            <a href="solutions.html" class="footer-link">Solutions Hub</a>
+            <a href="pricing.html" class="footer-link">Pricing Plans</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <div class="footer-col-title">Support</div>
+          <div class="footer-links-list">
+            <a href="contact.html" class="footer-link">Contact Coordinates</a>
+            <a href="404.html" class="footer-link">Terms & Agreements</a>
+            <a href="404.html" class="footer-link">Security Audits</a>
+            <a href="resources.html" class="footer-link">Documentation & Guides</a>
+            <a href="404.html" class="footer-link">Order Status / API Status</a>
+            <a href="user-dashboard.html" class="footer-link">User Dashboard</a>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <div class="footer-col-title">Newsletter</div>
+          <p style="font-size: 0.925rem; line-height: 1.6; color: #94A3B8; margin-bottom: 1rem;">
+            Get quarterly updates, smart style alerts, and platform feature reports.
+          </p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly quarterly intelligence reports!');">
+            <input type="email" class="footer-newsletter-input" placeholder="Your Email" required>
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

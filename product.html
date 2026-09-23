@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the Stackly platform: smart dashboards, real-time analytics, zero-code automation, and enterprise-grade security.">
+  <title>Product Architecture & Capabilities — Stackly SaaS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img">
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="product.html" class="nav-link active">Product</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="solutions.html" class="nav-link">Solutions</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-trigger-btn" aria-label="Open Search">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search...</span>
+          <kbd>⌘K</kbd>
+        </button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Log in</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="mobile-toggle-btn" aria-label="Toggle Menu">
+          <svg class="icon icon-lg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img">
+      </div>
+      <button class="mobile-drawer-close" aria-label="Close Menu">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-search-wrap">
+      <div class="mobile-drawer-search-box search-trigger-btn">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Search features, docs...</span>
+      </div>
+    </div>
+
+    <nav class="mobile-drawer-nav">
+      <a href="index.html" class="mobile-nav-link"><span>Home</span> <span class="nav-dash"></span></a>
+      <a href="about.html" class="mobile-nav-link"><span>About Us</span> <span class="nav-dash"></span></a>
+      <a href="product.html" class="mobile-nav-link active"><span>Product</span> <span class="nav-dash"></span></a>
+      <a href="features.html" class="mobile-nav-link"><span>Features</span> <span class="nav-dash"></span></a>
+      <a href="solutions.html" class="mobile-nav-link"><span>Solutions</span> <span class="nav-dash"></span></a>
+      <a href="pricing.html" class="mobile-nav-link"><span>Pricing</span> <span class="nav-dash"></span></a>
+      <a href="contact.html" class="mobile-nav-link"><span>Customer Contact</span> <span class="nav-dash"></span></a>
+    </nav>
+
+    <div class="mobile-drawer-footer">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">LOGIN</a>
+      <a href="register.html" class="btn btn-secondary" style="width: 100%;">MY ACCOUNT</a>
+      <div class="mobile-drawer-concierge">
+        <div class="mobile-drawer-concierge-title">DIRECT WORKSPACE CONCIERGE</div>
+        <div class="concierge-info-grid">
+          <div class="concierge-row"><span class="concierge-label">Call:</span> <a href="tel:+18005557825" class="concierge-val">+1 (800) 555-STCK</a></div>
+          <div class="concierge-row"><span class="concierge-label">Email:</span> <a href="mailto:concierge@stackly.com" class="concierge-val">concierge@stackly.com</a></div>
+          <div class="concierge-row"><span class="concierge-label">Hubs:</span> <span class="concierge-val">California • Oregon • Midwest • Texas</span></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="search-modal-overlay">
+    <div class="search-modal-container">
+      <div class="search-input-wrapper">
+        <svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input-field" placeholder="Search features, solutions, docs..." autofocus>
+        <button class="search-modal-close btn-ghost btn-sm">ESC</button>
+      </div>
+      <div class="search-results-box"></div>
+      <div class="search-modal-footer">
+        <span>Press <kbd>ESC</kbd> to close</span>
+        <span>Stackly Navigation Search</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         PAGE HERO — 2-COLUMN SPLIT SHOWCASE (LEFT CONTENT & RIGHT MOCKUP)
+         ========================================================================== -->
+    <section class="hero-section" style="padding: 5.5rem 0 6.5rem;">
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+      
+      <div class="container container-wide">
+        <div class="hero-split-grid">
+          <!-- Left: Product Story, Capabilities & CTAs -->
+          <div class="hero-content">
+            <div class="hero-badge-wrap">
+              <span class="hero-badge-pill">Product Suite v3.0</span>
+              <span>Next-Gen SaaS Intelligence &amp; Execution</span>
+            </div>
+
+            <h1 class="hero-title">
+              The Complete Execution Platform <br>
+              <span class="gradient-text-light">For High-Growth Teams.</span>
+            </h1>
+
+            <p class="hero-desc">
+              Unify your engineering sprints, revenue telemetry, automated workflows, and executive governance into one high-performance dashboard ecosystem.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="user-dashboard.html" class="btn btn-primary btn-lg">
+                <span>Launch Live App Demo</span>
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="admin-dashboard.html" class="btn btn-dark-outline btn-lg">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                <span>Explore Admin Console</span>
+              </a>
+            </div>
+
+            <!-- Capabilities Feature Pills -->
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--slate-300); font-size: 0.85rem; font-weight: 500;">
+                <svg class="icon icon-sm" style="color: #10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Sub-50ms WebSocket Sync</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--slate-300); font-size: 0.85rem; font-weight: 500;">
+                <svg class="icon icon-sm" style="color: #10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Zero-Code Logic Rules</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--slate-300); font-size: 0.85rem; font-weight: 500;">
+                <svg class="icon icon-sm" style="color: #10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>SOC2 Type II Certified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: 3D Product Perspective Laptop Showcase -->
+          <div class="hero-showcase-wrapper">
+            <div class="hero-dashboard-container">
+              <!-- Floating Badge 1 -->
+              <div class="floating-badge floating-badge-1" style="background: rgba(11, 15, 25, 0.92); border: 1px solid rgba(59, 130, 246, 0.4);">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(59, 130, 246, 0.2); display: flex; align-items: center; justify-content: center; color: #60A5FA;">
+                  <svg class="icon" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </div>
+                <div>
+                  <div style="font-size: 0.72rem; color: var(--slate-400);">✨ Realtime Pulse</div>
+                  <div style="font-weight: 700; color: #38BDF8; font-size: 0.85rem;">99.99% Telemetry Uptime</div>
+                </div>
+              </div>
+
+              <!-- Floating Badge 2 -->
+              <div class="floating-badge floating-badge-2" style="background: rgba(11, 15, 25, 0.92); border: 1px solid rgba(16, 185, 129, 0.4);">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(16, 185, 129, 0.2); display: flex; align-items: center; justify-content: center; color: #34D399;">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                </div>
+                <div>
+                  <div style="font-size: 0.72rem; color: var(--slate-400);">Pipeline Velocity</div>
+                  <div style="font-weight: 700; color: #10B981; font-size: 0.85rem;">+$165K MRR Captured</div>
+                </div>
+              </div>
+
+              <!-- Mockup Frame -->
+              <div class="hero-dashboard-mockup">
+                <div class="mockup-header-bar">
+                  <div class="mockup-dots">
+                    <span class="mockup-dot red"></span>
+                    <span class="mockup-dot yellow"></span>
+                    <span class="mockup-dot green"></span>
+                  </div>
+                  <div class="mockup-url-bar">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>stackly.app/workspace/pulse-analytics</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="display:inline-block; width: 8px; height: 8px; border-radius:50%; background:#10B981;"></span>
+                    <span style="font-size: 0.75rem; color: #10B981; font-weight: 600;">Live Cloud Sync</span>
+                  </div>
+                </div>
+
+                <div class="hero-preview-img-container">
+                  <img src="assets/images/dashboard-perspective-laptop.webp" alt="Stackly 3D Pulse Analytics Dashboard Platform" loading="eager">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. Interactive Dashboard Architecture: Nexus Light Analytics -->
+    <section class="section" style="padding: 6rem 0;">
+      <div class="container">
+        <div class="product-showcase-grid" style="align-items: center; gap: 3.5rem;">
+          <div>
+            <span class="section-badge">Module 01 • Nexus Workspace</span>
+            <h2 style="font-size: clamp(1.85rem, 3vw, 2.35rem); margin: 0.75rem 0 1.25rem; letter-spacing: -0.02em;">Intelligent Analytics &amp; Growth Intelligence</h2>
+            <p style="color: var(--slate-600); margin-bottom: 1.5rem; line-height: 1.7; font-size: 1.05rem;">
+              The Nexus Dashboard empowers every department with granular visibility into user conversions, dynamic cohort retention, real-time revenue analytics, and frictionless sprint telemetry.
+            </p>
+            <div class="form-row-2col" style="margin-bottom: 1.5rem;">
+              <div style="background: var(--slate-50); padding: 1rem; border-radius: var(--radius-lg); border: 1px solid var(--slate-200);">
+                <div style="font-weight: 700; color: var(--slate-900); font-size: 0.95rem;">Live Telemetry</div>
+                <p style="font-size: 0.8rem; color: var(--slate-500); margin-top: 0.25rem;">Sub-50ms WebSocket streaming with instant threshold alerts.</p>
+              </div>
+              <div style="background: var(--slate-50); padding: 1rem; border-radius: var(--radius-lg); border: 1px solid var(--slate-200);">
+                <div style="font-weight: 700; color: var(--slate-900); font-size: 0.95rem;">Predictive AI Models</div>
+                <p style="font-size: 0.8rem; color: var(--slate-500); margin-top: 0.25rem;">Automated churn risk forecasting and conversion optimization.</p>
+              </div>
+            </div>
+            <ul style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: var(--slate-700); font-weight: 500; font-size: 0.925rem;">
+                <svg class="icon icon-sm" style="color:#10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Realtime transaction ledgers &amp; instant MRR reconciliation
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: var(--slate-700); font-weight: 500; font-size: 0.925rem;">
+                <svg class="icon icon-sm" style="color:#10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Customizable KPI cards with drag-and-drop widget layout
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: var(--slate-700); font-weight: 500; font-size: 0.925rem;">
+                <svg class="icon icon-sm" style="color:#10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Exportable executive PDF &amp; CSV reports in a single click
+              </li>
+            </ul>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="user-dashboard.html" class="btn btn-primary">Open Nexus Workspace</a>
+              <a href="features.html" class="btn btn-secondary">Explore Features</a>
+            </div>
+          </div>
+
+          <!-- Right: Browser Frame with High-Fidelity Mockup -->
+          <div style="position: relative; border-radius: var(--radius-2xl); overflow: hidden; border: 1px solid var(--slate-200); box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15); background: #ffffff; height: 100%; min-height: 440px; display: flex; flex-direction: column;">
+            <div style="background: var(--slate-100); padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--slate-200); display: flex; align-items: center; justify-content: space-between;">
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444; display: inline-block;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
+                <span style="font-size: 0.8rem; font-weight: 600; color: var(--slate-700); margin-left: 0.5rem;">Nexus AI Analytics Suite</span>
+              </div>
+              <span class="status-badge status-active" style="font-size: 0.7rem;">Active Session</span>
+            </div>
+            <div style="flex: 1; overflow: hidden; background: #F8FAFC; position: relative;">
+              <img src="assets/images/dashboard-light-nexus.webp" alt="Stackly Nexus Light Dashboard &amp; Analytics Studio" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Dark Mode Executive Governance & Overview -->
+    <section class="section section-subtle" style="padding: 6rem 0;">
+      <div class="container">
+        <div class="product-showcase-grid" style="direction: rtl; align-items: center; gap: 3.5rem;">
+          <div style="direction: ltr;">
+            <span class="section-badge section-badge-purple">Module 02 • Executive Governance</span>
+            <h2 style="font-size: clamp(1.85rem, 3vw, 2.35rem); margin: 0.75rem 0 1.25rem; letter-spacing: -0.02em;">Executive Command Center &amp; Multi-Metric Telemetry</h2>
+            <p style="color: var(--slate-600); margin-bottom: 1.5rem; line-height: 1.7; font-size: 1.05rem;">
+              Get deep operational oversight with real-time revenue distributions, storage allocation gauges, product engagement bars, and audit trail verifications.
+            </p>
+            <div class="form-row-2col" style="margin-bottom: 1.5rem;">
+              <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-lg); border: 1px solid var(--slate-200);">
+                <div style="font-weight: 700; color: var(--slate-900); font-size: 0.95rem;">Multi-Tenant RBAC</div>
+                <p style="font-size: 0.8rem; color: var(--slate-500); margin-top: 0.25rem;">Enterprise access control with SAML, SCIM, and hardware 2FA.</p>
+              </div>
+              <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-lg); border: 1px solid var(--slate-200);">
+                <div style="font-weight: 700; color: var(--slate-900); font-size: 0.95rem;">Audit Compliance</div>
+                <p style="font-size: 0.8rem; color: var(--slate-500); margin-top: 0.25rem;">Immutable logging compliant with SOC2 Type II, HIPAA, and GDPR.</p>
+              </div>
+            </div>
+            <ul style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: var(--slate-700); font-weight: 500; font-size: 0.925rem;">
+                <svg class="icon icon-sm" style="color:var(--purple-600);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Interactive donut charts for revenue segmentation &amp; customer tiers
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: var(--slate-700); font-weight: 500; font-size: 0.925rem;">
+                <svg class="icon icon-sm" style="color:var(--purple-600);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Radial progress rings tracking storage, compute, and bandwidth limits
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.6rem; color: var(--slate-700); font-weight: 500; font-size: 0.925rem;">
+                <svg class="icon icon-sm" style="color:var(--purple-600);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Top performing product leaderboards with monthly comparative deltas
+              </li>
+            </ul>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="admin-dashboard.html" class="btn btn-purple">Open Admin Console</a>
+              <a href="pricing.html" class="btn btn-secondary">Compare Tier Plans</a>
+            </div>
+          </div>
+
+          <!-- Left (RTL): Dark Mode Executive Preview -->
+          <div style="direction: ltr; position: relative; border-radius: var(--radius-2xl); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5); background: #0B1120; height: 100%; min-height: 440px; display: flex; flex-direction: column;">
+            <div style="background: #0F172A; padding: 0.85rem 1.25rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; justify-content: space-between;">
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444; display: inline-block;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
+                <span style="font-size: 0.8rem; font-weight: 600; color: #E2E8F0; margin-left: 0.5rem;">Dark Executive Telemetry Console</span>
+              </div>
+              <span class="status-badge status-active" style="font-size: 0.7rem; background: rgba(16, 185, 129, 0.15); color: #34D399; border-color: rgba(16, 185, 129, 0.3);">99.98% Healthy</span>
+            </div>
+            <div style="flex: 1; overflow: hidden; background: #060911; position: relative;">
+              <img src="assets/images/dashboard-dark-overview.webp" alt="Stackly Dark Mode Executive Governance &amp; Overview Dashboard" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Real-World Workspace Context: Laptop Setup -->
+    <section class="section" style="padding: 6rem 0;">
+      <div class="container">
+        <div class="product-showcase-grid" style="align-items: center; gap: 3.5rem;">
+          <div>
+            <span class="section-badge">Module 03 • Seamless Flow</span>
+            <h2 style="font-size: clamp(1.85rem, 3vw, 2.35rem); margin: 0.75rem 0 1.25rem; letter-spacing: -0.02em;">Designed for Focused Founders &amp; Engineering Teams</h2>
+            <p style="color: var(--slate-600); margin-bottom: 1.75rem; line-height: 1.7; font-size: 1.05rem;">
+              Whether in remote async environments or high-velocity office spaces, Stackly eliminates clutter with an intuitive, distraction-free interface engineered for peak productivity.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--blue-50); color: var(--blue-600); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div>
+                  <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Ultra-Fast Keyboard Navigation</h4>
+                  <p style="font-size: 0.85rem; color: var(--slate-500);">Jump across workspaces, trigger actions, and filter datasets with native <kbd>⌘K</kbd> omni-search.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--purple-50); color: var(--purple-600); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <div>
+                  <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Instant Multi-Device Sync</h4>
+                  <p style="font-size: 0.85rem; color: var(--slate-500);">Zero latency state replication between desktop browsers, tablets, and mobile web views.</p>
+                </div>
+              </div>
+            </div>
+            <a href="register.html" class="btn btn-primary">Start Building Free</a>
+          </div>
+
+          <div style="position: relative; border-radius: var(--radius-2xl); overflow: hidden; border: 1px solid var(--slate-200); box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15); background: #ffffff; height: 100%; min-height: 400px; display: flex; flex-direction: column;">
+            <div style="background: var(--slate-100); padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--slate-200); display: flex; align-items: center; justify-content: space-between;">
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444; display: inline-block;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
+                <span style="font-size: 0.8rem; font-weight: 600; color: var(--slate-700); margin-left: 0.5rem;">Developer Workstation Mode</span>
+              </div>
+              <span class="status-badge status-active" style="font-size: 0.7rem;">Omni-Sync Active</span>
+            </div>
+            <div style="flex: 1; overflow: hidden; background: #F8FAFC; position: relative;">
+              <img src="assets/images/hero-laptop-mockup.webp" alt="Stackly running seamlessly on modern developer workstations" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Interactive Architecture Grid -->
+    <section id="automation" class="section section-subtle" style="padding: 6rem 0;">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+          <span class="section-badge">Core Architecture</span>
+          <h2 class="section-title">Built Upon Three Bulletproof Foundations</h2>
+          <p class="section-subtitle" style="margin: 0 auto;">Everything you need to orchestrate complex operations without technical debt.</p>
+        </div>
+
+        <div class="product-foundations-grid">
+          <!-- Card 1: Growth Velocity -->
+          <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--slate-200);">
+                <img src="assets/images/founder-growth-laptop.webp" alt="Stackly Sprint Velocity & Founder Launch Analytics" style="width: 100%; height: auto; display: block;">
+              </div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Sprint Orchestration</h3>
+              <p style="color: var(--slate-600); font-size: 0.9rem; line-height: 1.6;">
+                Flexible Kanban boards with custom swimlanes, cycle time metrics, and automatic GitHub PR synchronization.
+              </p>
+            </div>
+            <a href="features.html" class="btn-ghost" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--blue-600);">
+              Learn More <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- Card 2: Quantum Automation Pipeline -->
+          <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--slate-200);">
+                <img src="assets/images/cloud-quantum-neon.webp" alt="Stackly Quantum Automated Cloud Pipelines" style="width: 100%; height: auto; display: block;">
+              </div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Zero-Code Automations</h3>
+              <p style="color: var(--slate-600); font-size: 0.9rem; line-height: 1.6;">
+                Event-driven logic pipelines with auto-retry buffers, payload transformation, and dead-letter queues.
+              </p>
+            </div>
+            <a href="solutions.html" class="btn-ghost" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--purple-600);">
+              Learn More <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+
+          <!-- Card 3: Cloud Network Mesh -->
+          <div class="feature-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--slate-200);">
+                <img src="assets/images/cloud-saas-network.webp" alt="Stackly Distributed Cloud Mesh & Global Infrastructure" style="width: 100%; height: auto; display: block;">
+              </div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Global Cloud Mesh</h3>
+              <p style="color: var(--slate-600); font-size: 0.9rem; line-height: 1.6;">
+                Multi-region tenant orchestration, auto-scaling nodes, sub-50ms data routing, and hardware-grade HSM encryption.
+              </p>
+            </div>
+            <a href="integrations.html" class="btn-ghost" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--blue-600);">
+              Learn More <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Section 1: Performance Benchmarks & Telemetry Engine -->
+    <section class="section" style="padding: 6rem 0; background: var(--slate-50); border-top: 1px solid var(--slate-200); border-bottom: 1px solid var(--slate-200);">
+      <div class="container">
+        <div class="section-title">
+          <span class="section-badge">Engine Benchmarks</span>
+          <h2>Ultra-Low Latency Telemetry at Global Scale</h2>
+          <p>Engineered from bare metal for instantaneous UI state synchronization, zero frame drops, and sub-50ms data streaming across 48 edge availability zones.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
+          <div class="feature-card" style="background: var(--white); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--blue-600); line-height: 1; margin-bottom: 0.5rem;">24<span style="font-size: 1.25rem; font-weight: 600;">ms</span></div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--slate-900);">WebSocket Payload Latency</h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">Average bi-directional data roundtrip across North American and European tier-1 edge nodes.</p>
+            <div style="background: var(--slate-100); height: 8px; border-radius: var(--radius-full); overflow: hidden;">
+              <div style="background: var(--blue-600); width: 92%; height: 100%; border-radius: var(--radius-full);"></div>
+            </div>
+            <div style="font-size: 0.75rem; color: #10B981; font-weight: 600; margin-top: 0.5rem;">7.5x faster than legacy REST polling</div>
+          </div>
+
+          <div class="feature-card" style="background: var(--white); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--purple-600); line-height: 1; margin-bottom: 0.5rem;">0.12<span style="font-size: 1.25rem; font-weight: 600;">s</span></div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--slate-900);">Universal Search Indexing</h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">Instant indexed querying across 10M+ transaction events, tickets, logs, and sprint tasks.</p>
+            <div style="background: var(--slate-100); height: 8px; border-radius: var(--radius-full); overflow: hidden;">
+              <div style="background: var(--purple-600); width: 88%; height: 100%; border-radius: var(--radius-full);"></div>
+            </div>
+            <div style="font-size: 0.75rem; color: #10B981; font-weight: 600; margin-top: 0.5rem;">Sub-second AST vector indexing</div>
+          </div>
+
+          <div class="feature-card" style="background: var(--white); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2.25rem; font-weight: 800; color: #10B981; line-height: 1; margin-bottom: 0.5rem;">99.999%</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--slate-900);">Global Mesh Uptime</h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">Active-active multi-region failover guarantee backed by automated node reconciliation.</p>
+            <div style="background: var(--slate-100); height: 8px; border-radius: var(--radius-full); overflow: hidden;">
+              <div style="background: #10B981; width: 99.9%; height: 100%; border-radius: var(--radius-full);"></div>
+            </div>
+            <div style="font-size: 0.75rem; color: #10B981; font-weight: 600; margin-top: 0.5rem;">Financially guaranteed SLA</div>
+          </div>
+
+          <div class="feature-card" style="background: var(--white); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2.25rem; font-weight: 800; color: #F59E0B; line-height: 1; margin-bottom: 0.5rem;">42<span style="font-size: 1.25rem; font-weight: 600;">MB</span></div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--slate-900);">Browser Client Footprint</h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">Ultra-lightweight DOM rendering with zero runtime garbage collection bottlenecks.</p>
+            <div style="background: var(--slate-100); height: 8px; border-radius: var(--radius-full); overflow: hidden;">
+              <div style="background: #F59E0B; width: 85%; height: 100%; border-radius: var(--radius-full);"></div>
+            </div>
+            <div style="font-size: 0.75rem; color: #10B981; font-weight: 600; margin-top: 0.5rem;">Smooth 60fps animations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Section 2: Enterprise Zero-Trust Security & Compliance Matrix -->
+    <section class="section" style="padding: 6rem 0;">
+      <div class="container">
+        <div class="section-title">
+          <span class="section-badge">Security Infrastructure</span>
+          <h2>Enterprise Zero-Trust &amp; Sovereign Data Isolation</h2>
+          <p>Bank-grade encryption, granular role governance, and verifiable compliance certs safeguard your high-value enterprise data.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3.5rem;">
+          <div class="feature-card" style="padding: 2.25rem; border-radius: var(--radius-2xl); background: var(--white); box-shadow: var(--shadow-md);">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-lg); background: var(--lavender-100); display: flex; align-items: center; justify-content: center; color: var(--blue-600); margin-bottom: 1.5rem;">
+              <svg class="icon" style="width: 26px; height: 26px;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--slate-900);">SOC2 Type II &amp; ISO 27001</h3>
+            <p style="color: var(--slate-600); font-size: 0.925rem; line-height: 1.65; margin-bottom: 1.25rem;">
+              Continuous third-party security auditing, automated CVE regression scans, and quarterly penetration certifications with downloadable compliance dossiers.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+              <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--slate-700); font-weight: 500;">
+                <svg class="icon icon-sm" style="color:#10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                HIPAA &amp; GDPR compliant sovereign EU/US enclaves
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--slate-700); font-weight: 500;">
+                <svg class="icon icon-sm" style="color:#10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Daily automated penetration testing reports
+              </li>
+            </ul>
+          </div>
+
+          <div class="feature-card" style="padding: 2.25rem; border-radius: var(--radius-2xl); background: var(--white); box-shadow: var(--shadow-md);">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-lg); background: rgba(124, 58, 237, 0.1); display: flex; align-items: center; justify-content: center; color: var(--purple-600); margin-bottom: 1.5rem;">
+              <svg class="icon" style="width: 26px; height: 26px;" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--slate-900);">Hardware HSM Key Rotation</h3>
+            <p style="color: var(--slate-600); font-size: 0.925rem; line-height: 1.65; margin-bottom: 1.25rem;">
+              Customer-Managed Encryption Keys (CMEK) with AWS CloudHSM &amp; Azure Key Vault integration. Stackly operators never hold your decryption keys.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+              <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--slate-700); font-weight: 500;">
+                <svg class="icon icon-sm" style="color:#10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                AES-256 at rest and TLS 1.3 in flight encryption
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--slate-700); font-weight: 500;">
+                <svg class="icon icon-sm" style="color:#10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Zero-knowledge data isolation per organization
+              </li>
+            </ul>
+          </div>
+
+          <div class="feature-card" style="padding: 2.25rem; border-radius: var(--radius-2xl); background: var(--white); box-shadow: var(--shadow-md);">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-lg); background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; color: #10B981; margin-bottom: 1.5rem;">
+              <svg class="icon" style="width: 26px; height: 26px;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--slate-900);">SAML 2.0 &amp; SCIM Provisioning</h3>
+            <p style="color: var(--slate-600); font-size: 0.925rem; line-height: 1.65; margin-bottom: 1.25rem;">
+              Seamless enterprise IdP federation with Okta, Azure AD, OneLogin, and Google Workspace for automated on/offboarding and RBAC permission sync.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+              <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--slate-700); font-weight: 500;">
+                <svg class="icon icon-sm" style="color:#10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Granular RBAC with attribute-based access control
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--slate-700); font-weight: 500;">
+                <svg class="icon icon-sm" style="color:#10B981;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Real-time audit log streaming to Datadog/Splunk
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Final CTA -->
+    <section class="section" style="padding-bottom: 6rem;">
+      <div class="container">
+        <div class="final-cta-card">
+          <div class="final-cta-grid">
+            <div class="final-cta-content" style="text-align: left;">
+              <span class="section-badge section-badge-dark" style="margin-bottom: 1.25rem;">Scale Up Fast</span>
+              <h2 style="font-size: clamp(2rem, 3.8vw, 2.85rem); color: var(--white); margin-bottom: 1rem; line-height: 1.2; letter-spacing: -0.02em;">
+                Experience the Stackly Operating System
+              </h2>
+              <p style="color: var(--slate-300); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.65;">
+                Eliminate operational debt and power your entire engineering, product, and revenue cycles in one unified platform.
+              </p>
+              <div style="display:flex; gap:1rem; flex-wrap: wrap;">
+                <a href="register.html" class="btn btn-primary btn-lg">Start Free Trial</a>
+                <a href="contact.html" class="btn btn-dark-outline btn-lg">Talk to Architecture Expert</a>
+              </div>
+            </div>
+
+            <div class="final-cta-img-box">
+              <img src="assets/images/cta-startup-rocket.webp" alt="Stackly Startup Launch Platform Engine">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Summary -->
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 0.5rem; display: inline-block;">
+            <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img" style="filter: brightness(0) invert(1); height: 42px;">
+          </a>
+          <p class="footer-brand-desc">
+            Mobilizing intelligent SaaS workflows, bespoke cloud infrastructure, sustainable data intelligence, and modern team productivity for high-growth tech enterprises.
+          </p>
+          <div class="social-links-row">
+            <a href="404.html" class="social-btn" aria-label="LinkedIn">in</a>
+            <a href="404.html" class="social-btn" aria-label="X">𝕏</a>
+            <a href="404.html" class="social-btn" aria-label="Instagram">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="YouTube">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About Stackly</a>
+            <a href="product.html" class="footer-link">Product Catalog</a>
+            <a href="features.html" class="footer-link">Features Matrix</a>
+            <a href="solutions.html" class="footer-link">Solutions Hub</a>
+            <a href="pricing.html" class="footer-link">Pricing Plans</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <div class="footer-col-title">Support</div>
+          <div class="footer-links-list">
+            <a href="contact.html" class="footer-link">Contact Coordinates</a>
+            <a href="404.html" class="footer-link">Terms & Agreements</a>
+            <a href="404.html" class="footer-link">Security Audits</a>
+            <a href="resources.html" class="footer-link">Documentation & Guides</a>
+            <a href="404.html" class="footer-link">Order Status / API Status</a>
+            <a href="user-dashboard.html" class="footer-link">User Dashboard</a>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <div class="footer-col-title">Newsletter</div>
+          <p style="font-size: 0.925rem; line-height: 1.6; color: #94A3B8; margin-bottom: 1rem;">
+            Get quarterly updates, smart style alerts, and platform feature reports.
+          </p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Stackly quarterly intelligence reports!');">
+            <input type="email" class="footer-newsletter-input" placeholder="Your Email" required>
+            <button type="submit" class="footer-newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Stackly. All rights reserved. Designed for financial clarity and wealth tracking.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Audits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

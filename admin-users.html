@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Admin Users & Seat Allocation — Manage organization members, invitations, seat quotas, and access privileges.">
+  <title>Users &amp; Seats — Stackly Admin Console</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Dashboard Layout -->
+  <div class="dashboard-layout">
+    <!-- Mobile Drawer Overlay -->
+    <div class="dashboard-drawer-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <a href="admin-dashboard.html" class="brand-logo" aria-label="Stackly Admin Dashboard">
+          <img src="assets/images/stackly-logo.png" alt="Stackly" class="brand-logo-img" style="filter: brightness(0) invert(1); height: 38px;">
+        </a>
+        <button class="dashboard-sidebar-close" aria-label="Close Dashboard Menu">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav-list">
+        <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--slate-500); font-weight: 700; padding: 0.5rem 0.85rem;">Administration</div>
+        <a href="admin-dashboard.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Admin Console</span>
+        </a>
+        <a href="admin-users.html" class="sidebar-nav-link active">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <span>Users & Seats</span>
+        </a>
+        <a href="admin-teams.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+          <span>Teams & RBAC</span>
+        </a>
+        <a href="admin-subscriptions.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          <span>Subscriptions & MRR</span>
+        </a>
+        <a href="admin-billing.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+          <span>Billing & Invoices</span>
+        </a>
+        <a href="admin-analytics.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>System Analytics</span>
+        </a>
+        <a href="admin-audit.html" class="sidebar-nav-link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Audit Logs</span>
+        </a>
+      </nav>
+
+      <div style="padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <a href="admin-dashboard.html" class="sidebar-user-card" title="Super Admin Account">
+          <div class="sidebar-user-avatar admin-avatar">KS</div>
+          <div class="sidebar-user-details">
+            <span class="sidebar-user-name">Kappalasuresh92</span>
+            <span class="sidebar-user-sub">Super Admin (Root)</span>
+          </div>
+        </a>
+        <a href="login.html" class="sidebar-nav-link" style="color: #F87171;">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          <span>Log out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="dashboard-main-content">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="dashboard-menu-toggle" aria-label="Toggle Dashboard Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div>
+            <h2 style="font-size: 1.25rem;">Users &amp; Seat Management</h2>
+            <span style="font-size: 0.8rem; color: var(--slate-500);">Organization #ORG-99201 • 84 / 100 Seats Occupied</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+          <a href="user-dashboard.html" class="btn btn-secondary btn-sm">Switch to User Workspace</a>
+          <button class="btn btn-primary btn-sm" onclick="alert('Invite user dialog... (Simulated)')">+ Add New User</button>
+          <a href="admin-audit.html" class="topbar-icon-btn" aria-label="Notifications" title="System Security Alerts">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span class="badge-dot"></span>
+          </a>
+          <div class="dashboard-user-widget" title="Super Admin Profile">
+            <div class="dashboard-user-avatar admin-avatar">
+              <span>KS</span>
+              <span class="online-indicator"></span>
+            </div>
+            <div class="dashboard-user-info">
+              <div class="dashboard-user-greeting">Welcome back, <strong>Kappalasuresh92</strong> 👑</div>
+              <div class="dashboard-user-role">Super Admin • Stackly HQ</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <main class="dashboard-body">
+        <!-- Stats 3-Col -->
+        <div class="dashboard-stats-3col">
+          <div class="stat-box">
+            <div class="stat-box-title">Total Allocated Seats</div>
+            <div class="stat-box-val" data-counter="100">100</div>
+            <div style="font-size: 0.8rem; color: var(--blue-600); font-weight: 600;">Enterprise Plan Quota</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-title">Active Members</div>
+            <div class="stat-box-val" data-counter="84">84</div>
+            <div style="font-size: 0.8rem; color: #10B981; font-weight: 600;">84% capacity utilization</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-title">Available Seats</div>
+            <div class="stat-box-val" data-counter="16">16</div>
+            <div style="font-size: 0.8rem; color: #F59E0B; font-weight: 600;">16 seats ready for onboarding</div>
+          </div>
+        </div>
+
+        <!-- User Directory Table -->
+        <div class="data-table-container">
+          <div style="padding: 1.25rem; border-bottom: 1px solid var(--slate-200); display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1.1rem;">Organization Member Roster</h3>
+            <span style="font-size: 0.85rem; color: var(--slate-500);">SOC2 Enforced 2FA Access</span>
+          </div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Role</th>
+                <th>Assigned Pod</th>
+                <th>2FA Status</th>
+                <th>Last Active</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Alexandre Keller</strong><br><span style="font-size:0.75rem; color:var(--slate-400);">alex@stackly.io</span></td>
+                <td><span class="status-badge" style="background: #EDE9FE; color: #6D28D9;">Workspace Admin</span></td>
+                <td>Executive Leadership</td>
+                <td><span class="status-badge status-active">Enforced</span></td>
+                <td>Just now</td>
+                <td><button class="btn btn-secondary btn-sm" onclick="alert('Manage permissions for Alexandre...')">Edit</button></td>
+              </tr>
+              <tr>
+                <td><strong>Sarah Lin</strong><br><span style="font-size:0.75rem; color:var(--slate-400);">sarah.lin@stackly.io</span></td>
+                <td><span class="status-badge status-active">Engineering Lead</span></td>
+                <td>Core Platform</td>
+                <td><span class="status-badge status-active">Enforced</span></td>
+                <td>12 min ago</td>
+                <td><button class="btn btn-secondary btn-sm" onclick="alert('Manage permissions for Sarah...')">Edit</button></td>
+              </tr>
+              <tr>
+                <td><strong>David Miller</strong><br><span style="font-size:0.75rem; color:var(--slate-400);">david.m@stackly.io</span></td>
+                <td><span class="status-badge" style="background: var(--blue-50); color: var(--blue-600);">Member</span></td>
+                <td>UI &amp; Frontend</td>
+                <td><span class="status-badge status-active">Enforced</span></td>
+                <td>45 min ago</td>
+                <td><button class="btn btn-secondary btn-sm" onclick="alert('Manage permissions for David...')">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
