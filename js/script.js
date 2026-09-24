@@ -1052,19 +1052,19 @@ function initLoginRoleSelector() {
    13B. LOGOUT & CREDENTIALS CLEARING HANDLER
    ========================================================================== */
 function initLogoutHandler() {
-  // If on login page, reset form and clear on logout param
+  // If on login page, reset form and ensure inputs are cleared
   const loginForm = document.getElementById('loginForm');
   if (loginForm) {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('logout') === 'true') {
       localStorage.removeItem('stackly_user');
       localStorage.removeItem('remembered_email');
-      loginForm.reset();
-      const emailInput = loginForm.querySelector('#email');
-      const passwordInput = loginForm.querySelector('#password');
-      if (emailInput) emailInput.value = '';
-      if (passwordInput) passwordInput.value = '';
     }
+    loginForm.reset();
+    const emailInput = loginForm.querySelector('#email');
+    const passwordInput = loginForm.querySelector('#password');
+    if (emailInput) emailInput.value = '';
+    if (passwordInput) passwordInput.value = '';
   }
 
   // Intercept all logout buttons across sidebar and topbar
