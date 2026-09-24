@@ -31,6 +31,8 @@ function initStickyHeader() {
   const header = document.querySelector('.site-header');
   if (!header) return;
 
+  document.body.classList.add('has-fixed-header');
+
   const handleScroll = () => {
     if (window.scrollY > 20) {
       header.classList.add('header-scrolled');
