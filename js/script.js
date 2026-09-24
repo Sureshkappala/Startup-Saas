@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initLoginRoleSelector();
   initDashboardUserSession();
+  initLogoutHandler();
 });
 
 /* ==========================================================================
@@ -994,7 +995,7 @@ function initLoginRoleSelector() {
   const userCard = document.querySelector('.role-user-card');
   const adminCard = document.querySelector('.role-admin-card');
   const emailInput = document.querySelector('#loginForm #email');
-  const submitBtn = document.querySelector('#loginForm button[type="submit"] span');
+  const submitBtnSpan = document.querySelector('#loginForm button[type="submit"] span');
 
   if (!roleRadios.length || !userCard || !adminCard) return;
 
@@ -1003,36 +1004,40 @@ function initLoginRoleSelector() {
       adminCard.classList.add('active');
       adminCard.style.border = '2px solid var(--blue-500)';
       adminCard.style.background = 'var(--lavender-50)';
-      const adminTitle = adminCard.querySelector('div:first-child');
+      const adminTitle = adminCard.querySelector('.role-card-title');
       if (adminTitle) adminTitle.style.color = 'var(--blue-600)';
 
       userCard.classList.remove('active');
       userCard.style.border = '1.5px solid #64748B';
       userCard.style.background = 'var(--white)';
-      const userTitle = userCard.querySelector('div:first-child');
+      const userTitle = userCard.querySelector('.role-card-title');
       if (userTitle) userTitle.style.color = 'var(--slate-700)';
 
-      if (emailInput && (emailInput.value === '' || emailInput.value === 'alex.member@stackly.io' || emailInput.value === 'alex.admin@stackly.io')) {
-        emailInput.value = 'kappalasuresh92@gmail.com';
+      if (emailInput) {
+        emailInput.placeholder = 'admin@company.com';
       }
-      if (submitBtn) submitBtn.textContent = 'Sign In as Administrator';
+      if (submitBtnSpan) {
+        submitBtnSpan.textContent = 'Sign In as Administrator';
+      }
     } else {
       userCard.classList.add('active');
       userCard.style.border = '2px solid var(--blue-500)';
       userCard.style.background = 'var(--lavender-50)';
-      const userTitle = userCard.querySelector('div:first-child');
+      const userTitle = userCard.querySelector('.role-card-title');
       if (userTitle) userTitle.style.color = 'var(--blue-600)';
 
       adminCard.classList.remove('active');
       adminCard.style.border = '1.5px solid #64748B';
       adminCard.style.background = 'var(--white)';
-      const adminTitle = adminCard.querySelector('div:first-child');
+      const adminTitle = adminCard.querySelector('.role-card-title');
       if (adminTitle) adminTitle.style.color = 'var(--slate-700)';
 
-      if (emailInput && (emailInput.value === '' || emailInput.value === 'alex.admin@stackly.io' || emailInput.value === 'alex.member@stackly.io')) {
-        emailInput.value = 'kappalasuresh92@gmail.com';
+      if (emailInput) {
+        emailInput.placeholder = 'name@company.com';
       }
-      if (submitBtn) submitBtn.textContent = 'Sign In to Dashboard';
+      if (submitBtnSpan) {
+        submitBtnSpan.textContent = 'Sign In to Workspace';
+      }
     }
   };
 
@@ -1040,6 +1045,40 @@ function initLoginRoleSelector() {
     radio.addEventListener('change', () => {
       updateRoleUI(radio.value);
     });
+  });
+}
+
+/* ==========================================================================
+   13B. LOGOUT & CREDENTIALS CLEARING HANDLER
+   ========================================================================== */
+function initLogoutHandler() {
+  // If on login page, reset form and clear on logout param
+  const loginForm = document.getElementById('loginForm');
+  if (loginForm) {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('logout') === 'true') {
+      localStorage.removeItem('stackly_user');
+      localStorage.removeItem('remembered_email');
+      loginForm.reset();
+      const emailInput = loginForm.querySelector('#email');
+      const passwordInput = loginForm.querySelector('#password');
+      if (emailInput) emailInput.value = '';
+      if (passwordInput) passwordInput.value = '';
+    }
+  }
+
+  // Intercept all logout buttons across sidebar and topbar
+  const logoutTriggers = document.querySelectorAll('a[href*="login.html"], .sidebar-nav-link[href*="login.html"]');
+  logoutTriggers.forEach(link => {
+    const text = link.textContent.trim().toLowerCase();
+    if (text.includes('log out') || text.includes('logout') || link.getAttribute('data-action') === 'logout') {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        localStorage.removeItem('stackly_user');
+        localStorage.removeItem('remembered_email');
+        window.location.href = 'login.html?logout=true';
+      });
+    }
   });
 }
 
