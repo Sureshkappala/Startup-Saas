@@ -520,6 +520,16 @@ function initFormValidation() {
           if (form.id === 'loginForm') {
             const emailInput = form.querySelector('#email')?.value.trim() || 'kappalasuresh92@gmail.com';
             const role = form.querySelector('input[name="loginRole"]:checked')?.value || 'user';
+            const rememberMeChecked = form.querySelector('#rememberMe')?.checked;
+
+            if (rememberMeChecked) {
+              localStorage.setItem('stackly_remember_me', 'true');
+              localStorage.setItem('remembered_email', emailInput);
+            } else {
+              localStorage.removeItem('stackly_remember_me');
+              localStorage.removeItem('remembered_email');
+            }
+
             const rawName = emailInput.split('@')[0] || 'Kappalasuresh92';
             const displayName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
             const userRoleTitle = role === 'admin' ? 'Super Admin' : 'Product Lead';
@@ -1054,18 +1064,32 @@ function initLoginRoleSelector() {
    13B. LOGOUT & CREDENTIALS CLEARING HANDLER
    ========================================================================== */
 function initLogoutHandler() {
-  // If on login page, reset form and ensure inputs are cleared
+  // If on login page, handle hydration according to Remember Me setting
   const loginForm = document.getElementById('loginForm');
   if (loginForm) {
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('logout') === 'true') {
+    const isLogout = urlParams.get('logout') === 'true';
+    if (isLogout) {
       localStorage.removeItem('stackly_user');
-      localStorage.removeItem('remembered_email');
+      if (localStorage.getItem('stackly_remember_me') !== 'true') {
+        localStorage.removeItem('remembered_email');
+      }
     }
-    loginForm.reset();
+
     const emailInput = loginForm.querySelector('#email');
     const passwordInput = loginForm.querySelector('#password');
-    if (emailInput) emailInput.value = '';
+    const rememberMeCheckbox = loginForm.querySelector('#rememberMe');
+
+    const isRemembered = localStorage.getItem('stackly_remember_me') === 'true';
+    const rememberedEmail = localStorage.getItem('remembered_email');
+
+    if (isRemembered && rememberedEmail) {
+      if (emailInput) emailInput.value = rememberedEmail;
+      if (rememberMeCheckbox) rememberMeCheckbox.checked = true;
+    } else {
+      if (emailInput) emailInput.value = '';
+      if (rememberMeCheckbox) rememberMeCheckbox.checked = false;
+    }
     if (passwordInput) passwordInput.value = '';
   }
 
@@ -1077,7 +1101,9 @@ function initLogoutHandler() {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         localStorage.removeItem('stackly_user');
-        localStorage.removeItem('remembered_email');
+        if (localStorage.getItem('stackly_remember_me') !== 'true') {
+          localStorage.removeItem('remembered_email');
+        }
         window.location.href = 'login.html?logout=true';
       });
     }
