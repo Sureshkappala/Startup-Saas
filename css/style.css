@@ -3622,11 +3622,75 @@ body.drawer-open .dashboard-sidebar {
 }
 
 @media (max-width: 768px) {
+  .site-header {
+    height: 64px !important;
+  }
+  body.has-fixed-header {
+    padding-top: 64px !important;
+  }
+  .nav-container {
+    height: 64px !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .brand-logo-img {
+    height: 32px !important;
+  }
   .nav-menu, .nav-actions .btn {
-    display: none;
+    display: none !important;
+  }
+  .nav-actions {
+    gap: 0.5rem !important;
+  }
+  .search-trigger-btn {
+    padding: 0 !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    border-radius: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+  .search-trigger-btn span,
+  .search-trigger-btn kbd {
+    display: none !important;
+  }
+  .search-trigger-btn svg {
+    width: 18px !important;
+    height: 18px !important;
   }
   .mobile-toggle-btn {
-    display: block;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 10px !important;
+    color: #FFFFFF !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s !important;
+  }
+  .mobile-toggle-btn:active {
+    transform: scale(0.92) !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+  }
+  .mobile-toggle-btn svg {
+    width: 22px !important;
+    height: 22px !important;
+    stroke: #FFFFFF !important;
+    stroke-width: 2.2 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+    display: block !important;
   }
   .hero-split-grid {
     grid-template-columns: 1fr;
